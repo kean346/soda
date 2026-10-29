@@ -1,35 +1,60 @@
 import Image from 'next/image';
 import PourExperience from '@/components/PourExperience';
 import ContactForm from '@/components/ContactForm';
-import HeroMotion from '@/components/HeroMotion';
+import MotionSystem from '@/components/MotionSystem';
+import { Arrow, LemonBranch, Wordmark } from '@/components/Brand';
 import { publicAsset } from '@/lib/public-asset';
-
-function CitrusMark({ className = '' }: { className?: string }) {
-  return <svg className={className} viewBox="0 0 80 80" fill="none" aria-hidden="true"><path d="M40 5v70M5 40h70M15 15l50 50M15 65l50-50" stroke="currentColor" strokeWidth="1.3"/><circle cx="40" cy="40" r="31" stroke="currentColor" strokeWidth="1.3"/><circle cx="40" cy="40" r="4" fill="currentColor"/></svg>;
-}
 
 export default function Home() {
   return <>
-    <header className="header">
-      <a href="#" className="wordmark" aria-label="Citrus 01 home" translate="no">CITRUS<span>01</span><span className="brand-dot" /></a>
-      <nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#the-drink">The drink</a><a className="nav-contact" href="#contact">Let’s talk <svg className="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" strokeWidth="1.5"/></svg></a></nav>
+    <header className="site-header">
+      <a href="#top" className="brand-link" aria-label="CITRUS 01 home"><Wordmark /></a>
+      <nav aria-label="Main navigation">
+        <a href="#experience">The experience</a>
+        <a href="#the-drink">The drink</a>
+        <a href="#contact" className="nav-contact">Say hello <Arrow /></a>
+      </nav>
     </header>
     <main id="main">
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="hero-topline"><span>A little sunshine. A little sparkle.</span><span className="hero-edition">An independent drink concept</span></div>
-        <div className="hero-heading"><h1 id="hero-title">A bright idea.<br/><span>In a can.</span></h1><div className="hero-side"><CitrusMark/><p>Sparkling citrus,<br/>reimagined.</p></div></div>
-        <div className="hero-photo" id="hero-photo"><Image src={publicAsset("/images/01-hero.webp")} alt="A butter-yellow CITRUS 01 can with fresh lemons and leaves in warm afternoon sunlight" fill priority quality={90} sizes="(max-width: 700px) 1500px, 100vw"/><a href="#experience" className="round-link" aria-label="Explore the scroll-driven pouring experience"><span aria-hidden="true">↓</span></a><span className="photo-caption">Sunshine, served chilled.</span></div>
-        <div className="hero-bottom"><span>Made for the bright side.</span><a href="#experience">Scroll to get a taste <span aria-hidden="true">↓</span></a><span>250 mL of possibility</span></div>
-        <HeroMotion/>
+      <section className="hero" id="top" aria-labelledby="hero-title">
+        <div className="hero-media"><Image src={publicAsset('/images/campaign-hero.webp')} alt="A chilled yellow CITRUS 01 can on sunlit travertine, surrounded by lemons and leaves" fill priority sizes="(max-width: 767px) 1000px, (max-width: 1100px) 1600px, 100vw" /></div>
+        <div className="hero-copy">
+          <p className="eyebrow hero-eyebrow">Sparkling citrus. A brighter state of mind.</p>
+          <h1 id="hero-title"><span className="hero-title-line"><span>A little</span></span><span className="hero-title-line"><span>liquid</span></span><span className="hero-title-line"><span><em>sunshine.</em></span></span></h1>
+          <p className="hero-description">For the unhurried afternoons.<br />And all the bright moments in between.</p>
+          <a className="underlined-link hero-link" href="#experience">Discover the feeling <Arrow /></a>
+        </div>
+        <div className="hero-foot"><span>An independent drink concept</span><span className="scroll-cue">Scroll to unwind <Arrow direction="down" /></span><span>250 mL / Endless possibility</span></div>
       </section>
-      <PourExperience/>
-      <section className="drink-section" id="the-drink" aria-labelledby="drink-title">
-        <div className="drink-intro"><span className="small-label">The drink, imagined.</span><h2 id="drink-title">Less ordinary.<br/>More <em>zest.</em></h2><p>A bright citrus note. A fine, lively sparkle. A little invitation to slow down and savour the good bit.</p></div>
-        <div className="drink-grid"><figure className="pour-photo"><Image src={publicAsset("/images/02-pouring.webp")} alt="Close-up concept image of sparkling golden citrus pouring into a ribbed glass" fill sizes="(max-width: 700px) 100vw, 60vw"/><figcaption>A moment worth pouring.</figcaption></figure><div className="drink-note"><CitrusMark/><h3>Good things.<br/>Nothing extra.</h3><p>One considered can. A citrus-inspired palette. An easy afternoon state of mind.</p><dl><div><dt>The mood</dt><dd>Sunlit & unhurried</dd></div><div><dt>The inspiration</dt><dd>Fresh citrus & fine bubbles</dd></div><div><dt>The format</dt><dd>A 250 mL concept can</dd></div></dl><p className="fineprint">A fictional drink concept. Flavour and product details are creative proposals, not verified ingredient or nutrition claims.</p></div></div>
+      <div className="intro-strip"><span>Sun-ripened inspiration.</span><span>Little bubbles. Big feeling.</span><span>Stay on the bright side.</span></div>
+      <PourExperience />
+      <section className="product section-pad" id="the-drink" aria-labelledby="product-title">
+        <div className="product-heading"><span className="eyebrow">Meet CITRUS 01</span><h2 id="product-title">A bright idea.<br /><em>Beautifully simple.</em></h2><div className="product-edition"><span>01</span><p>Sparkling citrus<br />A flavour, imagined.</p></div></div>
+        <div className="product-grid">
+          <figure className="product-figure"><div className="product-photo"><Image src={publicAsset('/images/campaign-product.webp')} alt="CITRUS 01 resting diagonally on pale stone among fresh lemons, ice and blossoms" fill sizes="(max-width: 767px) 100vw, 48vw" /></div><figcaption><span>A study in the good things.</span><span>CITRUS 01 / Sparkling citrus</span></figcaption></figure>
+          <div className="product-copy"><LemonBranch /><h3>Less ordinary.<br />A little <em>more zest.</em></h3><p>We imagined a drink with the warmth of a late afternoon and the brightness of freshly cut citrus. Easy to reach for. Worth slowing down for.</p><p>One little can. A whole new way to see the sunny side.</p><dl className="product-notes"><div><dt>The inspiration</dt><dd>Citrus, sunshine, simplicity</dd></div><div><dt>The feeling</dt><dd>Light, lively, unhurried</dd></div><div><dt>The occasion</dt><dd>Whenever the moment calls</dd></div></dl><p className="concept-note">A fictional beverage concept. Flavour descriptions express a creative direction, not verified product claims.</p></div>
+        </div>
       </section>
-      <section className="lifestyle" aria-labelledby="lifestyle-title"><div className="lifestyle-copy"><span className="small-label">An afternoon, well spent.</span><h2 id="lifestyle-title">Leave a little<br/>room for<br/><em>the good bit.</em></h2><p>Long shadows. Ice in the glass.<br/>Nowhere else you need to be.</p><a className="text-link" href="#contact">Let’s make something bright <svg className="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" strokeWidth="1.5"/></svg></a></div><figure><Image src={publicAsset("/images/03-still-life.webp")} alt="CITRUS 01 can resting among lemons, melting ice, green leaves and citrus blossoms" fill sizes="(max-width: 700px) 100vw, 55vw"/><figcaption>A study in sunshine.</figcaption></figure></section>
-      <section className="contact" id="contact" aria-labelledby="contact-title"><div className="contact-heading"><span className="small-label">A fresh beginning.</span><h2 id="contact-title">Something good<br/>starts <em>here.</em></h2><p>Have a bright idea of your own?<br/>There’s always room at the table.</p><CitrusMark/></div><ContactForm/></section>
+      <section className="sensory" aria-labelledby="sensory-title">
+        <div className="sensory-photo"><Image src={publicAsset('/images/campaign-citrus.webp')} alt="A sunlit lemon half with translucent pulp and a deep green leaf" fill sizes="(max-width: 767px) 100vw, 50vw" /></div>
+        <div className="sensory-copy"><span className="eyebrow">Inspired by the essentials</span><h2 id="sensory-title">Nothing quite<br />like the<br /><em>bright side.</em></h2><p>The zest of citrus. The dance of little bubbles.<br className="desktop-break" /> The kind of refreshment you can almost feel.</p><div className="sensory-line" /><div className="sensory-details"><div><span>Bright</span><p>A citrus-led flavour idea.</p></div><div><span>Light</span><p>A fine, playful sparkle.</p></div><div><span>Easy</span><p>A moment to make your own.</p></div></div></div>
+      </section>
+      <section className="lifestyle" aria-labelledby="lifestyle-title">
+        <div className="lifestyle-media"><Image src={publicAsset('/images/campaign-afternoon.webp')} alt="CITRUS 01 and a sparkling glass with ice and lemon peel on a sunny terrace" fill sizes="(max-width: 767px) 1100px, 100vw" /></div>
+        <div className="lifestyle-shade" />
+        <div className="lifestyle-copy"><span className="eyebrow">Nowhere else to be.</span><h2 id="lifestyle-title">Make an<br />afternoon<br /><em>of it.</em></h2><p>The ice can melt.<br />The conversation can wander.<br />The good bit is right here.</p></div>
+        <span className="lifestyle-caption">Best enjoyed with a little time to spare.</span>
+      </section>
+      <section className="contact section-pad" id="contact" aria-labelledby="contact-title">
+        <div className="contact-copy"><span className="eyebrow">A fresh beginning</span><h2 id="contact-title">Good things<br />start with<br /><em>hello.</em></h2><p>A bright idea. A creative collaboration.<br />A conversation worth having.</p><LemonBranch /></div>
+        <ContactForm />
+      </section>
     </main>
-    <footer><a href="#" className="footer-brand" translate="no">CITRUS 01<svg className="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" strokeWidth="1.5"/></svg></a><div className="footer-bottom"><p>Independent creative concept • Not affiliated with any existing beverage brand</p><a href="#main">Back to the sunshine ↑</a><span>© 2026 CITRUS 01</span></div></footer>
+    <footer className="site-footer">
+      <div className="footer-top"><p>A little sunshine goes a long way.</p><a href="#top" className="back-top">Back to the bright side <Arrow /></a></div>
+      <div className="footer-wordmark"><Wordmark footer /></div>
+      <div className="footer-bottom"><p>Independent concept / Not affiliated with any existing beverage brand</p><span>© 2026 CITRUS 01</span><span>Made of bright ideas.</span></div>
+    </footer>
+    <MotionSystem />
   </>;
 }

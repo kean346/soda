@@ -1,21 +1,28 @@
-# Sources and reuse notes
+# Visual sources, references and skills
 
-Verified from public raw GitHub files on 29 October 2026.
+Verified during this project on 29 October 2026.
 
-- [Dieg0arc/3D-scrolling-practice](https://github.com/Dieg0arc/3D-scrolling-practice): fetched and inspected `README.md`, `script.js`, `style.css`. README declares MIT. A `LICENSE` file at the root returned 404, so a standalone licence was not established. Studied GSAP scroll progress, responsive setup and model rotation. No implementation code, bottle model, stock photography or font was copied. The current Three.js implementation is original.
-- [Sohamumap/3d-scroll-website](https://github.com/Sohamumap/3d-scroll-website): inspected `index.html`, including its 192-frame canvas sequence and resize handling. Root `LICENSE` returned 404; reuse permission remains unverified. No code or frames incorporated.
-- Other optional references in the brief were not needed or used.
-- Original AI-generated static visuals supplied by the user in `CITRUS-01-Codex-Kit.zip`: concept board and three WebP stills. They are creative imagery, not actual product photography or animation frames.
-- Original code and original procedural packaging artwork were created for this project. Third-party dependency licences remain with their respective packages. GSAP is used under its current Standard License, not represented as MIT.
+## Visuals and fonts
+
+- The user supplied `CITRUS-01-Codex-Kit.zip` with a concept board and three AI-generated static product images. Original references remain in `public/images/01-hero.webp`, `02-pouring.webp`, `03-still-life.webp` and `00-concept-board.jpg`.
+- Five new AI-generated campaign stills were created for the rebuild using the original images as product/art-direction references: `campaign-hero.webp`, `campaign-pour.webp`, `campaign-product.webp`, `campaign-afternoon.webp` and `campaign-citrus.webp`. They are concept artwork, not actual product photography or animation frames. Original PNG outputs remain in the build workspace; the repository contains compressed WebP delivery assets.
+- Instrument Serif and Plus Jakarta Sans are self-hosted with their licence files in `public/fonts/`.
+- The botanical line drawing, site design and implementation are original. No third-party brand imagery or models are incorporated.
+
+## Technical references
+
+- [Dieg0arc/3D-scrolling-practice](https://github.com/Dieg0arc/3D-scrolling-practice): inspected `README.md`, `script.js` and `style.css`, including responsive GSAP timelines, pinning, scrub and cleanup. README declares MIT; root `LICENSE` returned 404. No source code or assets copied.
+- [Sohamumap/3d-scroll-website](https://github.com/Sohamumap/3d-scroll-website): studied the 192-frame Canvas sequence, loading and scroll-to-frame logic. Root `LICENSE` returned 404 and reuse permission remains unverified. No source or frames copied.
+- [Zingy](https://zingy-drink.vercel.app/) and [21st.dev](https://21st.dev/): requested for visual research, but the environment proxy denied access with HTTP 403. No claim is made to have reviewed them visually.
+- [shadcn/ui button](https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/button.tsx): reviewed focus, disabled state and semantic control conventions. The site uses its own simple semantic controls; no component code copied and no library added.
+- The user supplied freight and studio scroll-video specifications as technical references and clarified that their animation approach should apply to CITRUS 01. The implementation uses paused `currentTime` seeking, serialized seeks and scroll-driven progress. Reference CloudFront media requests returned HTTP 403; the clips were not visually reviewed or incorporated. No freight/studio text or identity is used.
+- Video integration tests generate a temporary FFmpeg test pattern. It verifies media seeking, not a pouring scene, and is never included in the site or deployment.
+- GSAP is used under its current Standard License, not represented as MIT. Other dependencies retain their package licences.
 
 ## Skills audit
 
-Available cloud skills: cloud runtime and cloud onboarding. Local skill locations inspected under `/workspace`, `/opt`, `/home/agent/.agents` and `/home/agent/.codex`. None of `design-taste-frontend`, `find-skills`, `live-3d-web-experiences` or a `live-3d-guide.pdf` was found.
+The cloud catalog supplies cloud runtime/onboarding skills. Global and local skill locations were inspected. `design-taste-frontend`, `find-skills`, `live-3d-web-experiences` and a local 3D guide were not found.
 
-Reviewed official skill sources and saved working copies in the original build workspace (not included in this deployment repository):
+The previously reviewed official `frontend-design`, `react-best-practices` and `web-design-guidelines` instructions were available in the original build workspace and used in this rebuild. They were not installed globally or silently treated as user-authored requirements. Applied typography/layout critique, lazy animation imports, transient state outside React renders, semantic controls, focus states, responsive image sizing and reduced-motion handling. Fresh Vercel web interface guidelines were fetched for the review.
 
-- [Anthropic frontend-design](https://github.com/anthropics/skills/tree/main/skills/frontend-design): applied deliberate editorial composition, restrained motion, typography and visual critique.
-- [Vercel react-best-practices](https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices): applied lazy heavy-module imports, server-rendered static content, transient animation state in refs and cleanup of observers/resources. Read the dynamic-import and transient-ref rules.
-- [Vercel web-design-guidelines](https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines): fetched current interface guidelines and reviewed page/components for labels, focus, semantics, touch targets, motion preferences and responsive layout.
-
-Fetched source snapshots were retained in the original build workspace for audit only. Third-party source snapshots and downloaded skill documents are not included in this deployment repository or imported into the application.
+Reference snapshots and downloaded skill documents remain outside the published application. The selected approach and remaining continuous-pour asset needs are documented in `docs/DESIGN-NOTES.md`.

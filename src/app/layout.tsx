@@ -7,13 +7,14 @@ const display = localFont({ src: [
   { path: '../../public/fonts/instrument-serif-latin-400-italic.woff2', weight: '400', style: 'italic' },
 ], variable: '--font-display', display: 'swap' });
 const sans = localFont({ src: [
-  { path: '../../public/fonts/space-grotesk-latin-400-normal.woff2', weight: '400' },
-  { path: '../../public/fonts/space-grotesk-latin-500-normal.woff2', weight: '500' },
+  { path: '../../public/fonts/plus-jakarta-sans-latin-400-normal.woff2', weight: '400' },
+  { path: '../../public/fonts/plus-jakarta-sans-latin-500-normal.woff2', weight: '500' },
+  { path: '../../public/fonts/plus-jakarta-sans-latin-600-normal.woff2', weight: '600' },
 ], variable: '--font-sans', display: 'swap' });
 
 export const metadata: Metadata = {
-  title: 'CITRUS 01 — A bright idea. In a can.',
-  description: 'A little sunshine, a little sparkle. Explore CITRUS 01, an independent sparkling citrus drink concept.',
+  title: 'CITRUS 01 — A little liquid sunshine.',
+  description: 'For unhurried afternoons and all the bright moments in between. Discover CITRUS 01, an independent sparkling citrus beverage concept.',
   robots: { index: false, follow: false },
 };
 export const viewport: Viewport = { themeColor: '#F6F0DF' };
