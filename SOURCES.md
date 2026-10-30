@@ -5,7 +5,7 @@ Verified during this project on 29 October 2026.
 ## Visuals and fonts
 
 - The user supplied `CITRUS-01-Codex-Kit.zip` with a concept board and three AI-generated static product images. Original references remain in `public/images/01-hero.webp`, `02-pouring.webp`, `03-still-life.webp` and `00-concept-board.jpg`.
-- Five new AI-generated campaign stills were created for the rebuild using the original images as product/art-direction references: `campaign-hero.webp`, `campaign-pour.webp`, `campaign-product.webp`, `campaign-afternoon.webp` and `campaign-citrus.webp`. They are concept artwork, not actual product photography or animation frames. Original PNG outputs remain in the build workspace; the repository contains compressed WebP delivery assets.
+- Five new AI-generated campaign stills were created for the rebuild using the original images as product/art-direction references: `campaign-hero.webp`, `campaign-pour.webp`, `campaign-product.webp`, `campaign-afternoon.webp` and `campaign-citrus.webp`. Two additional transparent concept cutouts, `citrus-can-cutout.webp` and `citrus-glass-cutout.webp`, drive the layered scroll sequence. They are concept artwork, not actual product photography or rendered fluid frames. Original PNG outputs remain in the build workspace; the repository contains compressed WebP delivery assets.
 - Instrument Serif and Plus Jakarta Sans are self-hosted with their licence files in `public/fonts/`.
 - The botanical line drawing, site design and implementation are original. No third-party brand imagery or models are incorporated.
 

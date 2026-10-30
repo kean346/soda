@@ -1,4 +1,4 @@
-name: Deploy CITRUS 01 to GitHub Pages
+name: Verify CITRUS 01 and manually deploy Pages
 
 on:
   push:
@@ -41,6 +41,7 @@ jobs:
           path: out
 
   deploy:
+    if: github.event_name == 'workflow_dispatch'
     needs: build
     runs-on: ubuntu-latest
     permissions:

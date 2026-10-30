@@ -23,7 +23,7 @@ results = []
 def progress(page, amount):
     page.evaluate('''p => {
       const root = document.querySelector('.ritual');
-      const distance = innerHeight * (innerWidth < 768 ? 1.65 : 2.2);
+      const distance = innerHeight * (innerWidth < 768 ? 4.8 : 5.5);
       scrollTo({top: root.getBoundingClientRect().top + scrollY + distance * p, behavior: 'instant'});
     }''', amount)
     page.wait_for_timeout(1400)
@@ -93,7 +93,7 @@ with tempfile.TemporaryDirectory(prefix='citrus-video-test-') as directory:
                     assert video.evaluate('v => v.src.startsWith("blob:") && v.paused && !v.loop && !v.controls')
                     progress(page, 0)
                     page.mouse.move(width / 2, 450)
-                    distance = 960 * (1.65 if width < 768 else 2.2)
+                    distance = 960 * (4.8 if width < 768 else 5.5)
                     page.mouse.wheel(0, round(distance * .45))
                     page.wait_for_timeout(1500)
                     state = video.evaluate('v => ({time: v.currentTime, duration: v.duration, paused: v.paused})')
@@ -136,8 +136,8 @@ with tempfile.TemporaryDirectory(prefix='citrus-video-test-') as directory:
                 progress(page, .5)
                 assert page.locator('.ritual').get_attribute('data-video-ready') is None
                 assert page.locator('.ritual-video').evaluate('v => getComputedStyle(v).visibility') == 'hidden'
-                assert page.locator('.ritual-shot img').is_visible()
-                results.append({'initial_reduced_motion': 'no video request', 'missing_video': 'photographic fallback retained'})
+                assert page.locator('.ritual-set').is_visible()
+                results.append({'initial_reduced_motion': 'no video request', 'missing_video': 'layered animation fallback retained'})
                 browser.close()
         finally:
             os.killpg(server.pid, signal.SIGTERM)

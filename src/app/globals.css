@@ -61,28 +61,46 @@ img { display: block; }
 .intro-strip { background: var(--butter); display: flex; justify-content: space-between; align-items: center; padding: 26px var(--gutter); font-size: 11px; }
 .intro-strip span:nth-child(2) { font-family: var(--font-display), serif; font-size: 22px; font-style: italic; }
 
-/* Pinned photographic choreography. It never intercepts wheel or touch events. */
-.ritual { position: relative; background: #5c4e30; color: var(--ivory); }
-.ritual-stage { position: relative; height: 100svh; min-height: 600px; max-height: 1150px; width: 100%; overflow: hidden; isolation: isolate; }
-.ritual-shot, .ritual-finish { position: absolute; inset: 0; }
-.ritual-shot img { object-fit: cover; object-position: 60% 50%; }
-.ritual-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; visibility: hidden; pointer-events: none; }
+/* A real layered sequence: scroll moves the can, tab, stream, liquid and bubbles. */
+.ritual { position: relative; background: #d9c28b; color: var(--ivory); }
+.ritual-stage { position: relative; height: 100svh; min-height: 650px; max-height: 1150px; width: 100%; overflow: hidden; isolation: isolate; background: radial-gradient(circle at 67% 28%, #f7e8b9 0 9%, transparent 32%), linear-gradient(118deg, #4b4b2f 0 40%, #7c7251 72%, #9d8f64); }
+.ritual-set { position: absolute; inset: 0; overflow: hidden; }
+.ritual-sun { position: absolute; width: 62vw; aspect-ratio: 1; top: -35vw; right: -8vw; border-radius: 50%; background: rgb(255 235 168 / 42%); filter: blur(35px); }
+.ritual-surface { position: absolute; left: -5%; right: -5%; bottom: -4%; height: 29%; transform: skewY(-1deg); transform-origin: left; background: linear-gradient(160deg, #d9c79f, #9e8861); box-shadow: inset 0 12px 28px rgb(255 244 210 / 30%); }
+.can-rig { position: absolute; z-index: 3; left: 60%; top: 12%; width: min(26vw, 390px); aspect-ratio: 2 / 3; transform-origin: 50% 9%; filter: drop-shadow(0 35px 25px rgb(28 28 15 / 26%)); }
+.can-cutout, .glass-cutout { object-fit: contain; }
+.can-tab { position: absolute; z-index: 4; width: 14%; height: 2%; top: 6.4%; left: 44%; transform-origin: 12% 65%; filter: drop-shadow(0 1px 1px rgb(0 0 0 / 30%)); }
+.can-opening { position: absolute; z-index: 3; left: 49%; top: 7.1%; width: 9%; height: 1.1%; border-radius: 50%; background: #4e482c; box-shadow: inset 0 1px 2px #201f13, 0 1px 0 #fff0c3; opacity: 0; }
+.can-mouth, .glass-lip { position: absolute; width: 0; height: 0; pointer-events: none; }
+.can-mouth { left: 53%; top: 7.7%; }
+.glass-lip { left: 51%; top: 19%; }
+.can-mist { position: absolute; z-index: 5; width: 10px; height: 10px; top: 8%; left: 52%; border-radius: 50%; background: #fff6d4; box-shadow: 14px -10px 0 -3px #fff, 27px 2px 0 -4px #fff; opacity: 0; }
+.can-mist--two { transform: translate(20px, -8px) scale(.7); }
+.can-shadow { position: absolute; left: 60%; bottom: 13%; width: 25%; height: 6%; border-radius: 50%; background: rgb(36 31 17 / 36%); filter: blur(18px); }
+.glass-rig { position: absolute; z-index: 4; width: min(29vw, 440px); aspect-ratio: 2 / 3; left: 63%; bottom: 5%; filter: drop-shadow(0 28px 18px rgb(25 24 13 / 25%)); opacity: 0; transform: translateY(80px) scale(.88); }
+.liquid-mask { --fill-top: 100%; position: absolute; z-index: 3; left: 21.2%; right: 20.5%; top: 19.7%; bottom: 20.5%; border-radius: 4% 4% 12% 12%; overflow: hidden; pointer-events: none; }
+.liquid-fill { position: absolute; inset: 0; opacity: .62; background: linear-gradient(90deg, #c88923a6, #f3cd5db3 25%, #f7d26b8c 70%, #c38c2e9c); clip-path: inset(100% 0 0 0); box-shadow: inset 0 0 18px rgb(255 255 255 / 25%); }
+.liquid-surface { position: absolute; left: 0; right: 0; top: var(--fill-top); height: 6%; border-radius: 50%; transform: translateY(-40%); background: rgb(255 220 111 / 44%); border-top: 1px solid rgb(255 242 181 / 85%); box-shadow: 0 -2px 6px rgb(255 231 154 / 20%); }
+.glass-cutout { z-index: 2; }
+.bubble { position: absolute; bottom: 2%; width: 4px; height: 4px; border: 1px solid rgb(255 255 255 / 85%); border-radius: 50%; box-shadow: inset 0 0 2px #fff; opacity: 0; }
+.bubble:nth-child(3n) { width: 4px; height: 4px; }
+.bubble:nth-child(even) { width: 6px; height: 6px; }
+.pour-stream { position: absolute; z-index: 5; inset: 0; width: 100%; height: 100%; overflow: visible; opacity: 0; pointer-events: none; filter: drop-shadow(0 0 5px rgb(255 228 117 / 65%)); }
+.pour-stream-path, .pour-stream-highlight { fill: none; stroke: url(#citrus-liquid-light); stroke-width: 8px; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.pour-stream-highlight { stroke: rgb(255 248 208 / 75%); stroke-width: 1.4px; }
+.glass-shadow { position: absolute; z-index: 2; left: 64%; bottom: 4%; width: 27%; height: 7%; border-radius: 50%; background: rgb(36 31 17 / 38%); filter: blur(18px); opacity: 0; }
+.ritual-video { position: absolute; z-index: 6; inset: 0; width: 100%; height: 100%; object-fit: cover; visibility: hidden; pointer-events: none; }
 .ritual[data-video-ready="true"] .ritual-video { visibility: visible; }
-.ritual[data-video-ready="true"] .ritual-finish > img,
-.ritual[data-video-ready="true"] .ritual-finish-shade { visibility: hidden; }
-.ritual-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(32 29 18 / 36%), transparent 65%); pointer-events: none; }
-.ritual-top { position: absolute; top: 35px; left: var(--gutter); right: var(--gutter); display: flex; justify-content: space-between; font-size: 10px; z-index: 3; }
-.ritual-copy { position: absolute; top: 34%; left: var(--gutter); max-width: 52%; z-index: 1; }
-.ritual-copy .eyebrow { margin-bottom: 28px; }
-.ritual-copy h2, .ritual-copy .display-copy { font-size: clamp(75px, 7.8vw, 125px); line-height: 1; letter-spacing: -.035em; }
-.ritual-copy p:not(.display-copy) { margin-top: 30px; font-size: 12px; line-height: 1.9; }
-.ritual-copy--second { visibility: hidden; opacity: 0; top: 49%; }
-.ritual-finish { clip-path: inset(100% 0 0 0); z-index: 2; }
-.ritual-finish img { object-fit: cover; object-position: 50% 60%; }
-.ritual-finish-shade { position: absolute; inset: 0; background: rgb(25 28 12 / 30%); }
-.ritual-finish-type { position: absolute; inset: 0; display: grid; align-content: center; justify-content: center; text-align: center; font-family: var(--font-display), serif; font-size: clamp(85px, 10.5vw, 160px); line-height: .98; letter-spacing: -.035em; }
-.ritual-finish-type em { display: contents; }
-.ritual-bottom { position: absolute; left: var(--gutter); right: var(--gutter); bottom: 30px; display: flex; align-items: center; justify-content: space-between; gap: 30px; font-size: 10px; z-index: 3; }
+.ritual[data-video-ready="true"] .ritual-set { visibility: hidden; }
+.ritual-top { position: absolute; top: 35px; left: var(--gutter); right: var(--gutter); display: flex; justify-content: space-between; font-size: 10px; z-index: 8; }
+.ritual-step { position: absolute; top: 34%; left: var(--gutter); max-width: 49%; z-index: 7; text-shadow: 0 5px 25px rgb(20 20 10 / 28%); }
+.ritual-step .eyebrow { margin-bottom: 28px; }
+.ritual-step h2, .ritual-step .display-copy { font-size: clamp(75px, 7.8vw, 125px); line-height: .96; letter-spacing: -.035em; }
+.ritual-step > p:not(.display-copy) { margin-top: 30px; font-size: 12px; line-height: 1.9; }
+.ritual-step--open, .ritual-step--pour, .ritual-step--finish { visibility: hidden; opacity: 0; }
+.ritual-step--pour { top: 19%; }
+.ritual-step--finish { top: 35%; }
+.ritual-bottom { position: absolute; left: var(--gutter); right: var(--gutter); bottom: 30px; display: flex; align-items: center; justify-content: space-between; gap: 30px; font-size: 10px; z-index: 8; }
 .ritual-progress { height: 1px; background: rgb(246 240 223 / 35%); flex: 1; margin-left: 30px; }
 .ritual-progress > span { display: block; width: 100%; height: 1px; background: var(--ivory); transform: scaleX(0); transform-origin: left center; }
 
@@ -177,9 +195,10 @@ img { display: block; }
   .hero-eyebrow { max-width: 210px; }
   .hero-description { max-width: 220px; }
   .hero-foot > span:last-child { display: none; }
-  .ritual-copy h2, .ritual-copy .display-copy { font-size: 80px; }
-  .ritual-copy { max-width: 60%; }
-  .ritual-shade { background: linear-gradient(90deg, rgb(32 29 18 / 46%), transparent 85%); }
+  .ritual-step h2, .ritual-step .display-copy { font-size: clamp(54px, 7vw, 70px); }
+  .ritual-step { max-width: 45%; }
+  .can-rig { left: 70%; top: 12%; width: min(30vw, 320px); }
+  .glass-rig { left: 50%; width: min(46vw, 460px); }
   .section-pad { padding-top: 85px; padding-bottom: 85px; }
   .product-grid { gap: 7%; }
   .product-edition { right: 0; bottom: 73px; }
@@ -232,16 +251,20 @@ img { display: block; }
   .intro-strip > span:nth-child(2) { font-size: 19px; }
   .intro-strip > span:last-child { display: none; }
   .ritual-stage { height: 100svh; min-height: 650px; }
-  .ritual-shot img { object-position: 67% center; }
-  .ritual-shade { background: linear-gradient(180deg, rgb(28 25 15 / 56%), rgb(28 25 15 / 40%) 38%, transparent 62%, rgb(28 25 15 / 17%)); }
+  .ritual-stage { background: radial-gradient(circle at 76% 62%, #e6cf8f, transparent 40%), linear-gradient(145deg, #41452e, #716448); }
+  .ritual-sun { width: 120vw; top: -65vw; right: -45vw; }
+  .ritual-surface { height: 26%; }
   .ritual-top { top: 26px; font-size: 8px; }
-  .ritual-copy { top: 13%; max-width: calc(100% - 50px); text-shadow: 0 2px 18px rgb(20 20 12 / 35%); }
-  .ritual-copy .eyebrow { font-size: 8px; margin-bottom: 18px; }
-  .ritual-copy h2, .ritual-copy .display-copy { font-size: clamp(58px, 15.8vw, 90px); line-height: .98; }
-  .ritual-copy p:not(.display-copy) { margin-top: 19px; font-size: 11px; line-height: 1.8; }
-  .ritual-copy--second { top: 16%; }
-  .ritual-finish-type { font-size: clamp(62px, 16.5vw, 95px); }
-  .ritual-finish img { object-position: 60% center; }
+  .ritual-step { top: 11%; max-width: calc(100% - 50px); text-shadow: 0 2px 18px rgb(20 20 12 / 35%); }
+  .ritual-step .eyebrow { font-size: 8px; margin-bottom: 15px; }
+  .ritual-step h2, .ritual-step .display-copy { font-size: clamp(56px, 15vw, 78px); line-height: .95; }
+  .ritual-step > p:not(.display-copy) { margin-top: 16px; font-size: 10px; line-height: 1.8; }
+  .ritual-step--pour, .ritual-step--finish { top: 10%; }
+  .can-rig { left: 48%; top: 33%; width: min(47vw, 275px); }
+  .can-shadow { left: 48%; bottom: 15%; width: 42%; }
+  .glass-rig { left: 26%; bottom: 2%; width: min(79vw, 400px); }
+  .glass-shadow { left: 42%; bottom: 3%; width: 52%; }
+  .pour-stream-path { stroke-width: 5px; }
   .ritual-bottom { bottom: 25px; font-size: 8px; gap: 18px; }
   .ritual-progress { margin-left: 8px; }
   .product-heading { padding-bottom: 35px; }
