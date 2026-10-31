@@ -11,6 +11,8 @@ python -m http.server 3000 --bind 0.0.0.0
 
 Open the site through your local server. On Vercel select **Other**, no build command, and the repository root as the output directory. All application code lives in `index.html`.
 
+Display headings use Syne; body text and product packaging retain Poppins. Atmospheric colour joins connect the chapters, and masked text reveals replay when a chapter returns to view. Packaging artwork renders at 4096 pixels on desktop and 2048 pixels on phones. Seven small condensation beads slowly slide down the can surface.
+
 The page imports Three.js from jsDelivr, Poppins from Google Fonts (with a jsDelivr font fallback), and the supplied decorative PNGs from CloudFront. It needs Internet access for WebGL modules; if those fail, a CSS product illustration and all content remain accessible. Flowers have original inline SVG fallbacks. No models, keys or external services are needed.
 
 ## Experience
