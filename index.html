@@ -7,14 +7,11 @@
 <meta name="description" content="BLOOMSHIFT. Botanical sparkling soda. Three unexpected flavours, one extraordinary little universe.">
 <title>BLOOMSHIFT — Sip outside the ordinary.</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23e7e3fb'/%3E%3Cpath d='M32 5Q34 30 59 32Q34 34 32 59Q30 34 5 32Q30 30 32 5' fill='%235b3bd1'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* A package-hosted copy keeps the same typeface available if Google Fonts fails. */
-@font-face{font-family:PoppinsBackup;src:url('https://cdn.jsdelivr.net/npm/@fontsource/poppins@5.2.6/files/poppins-latin-800-normal.woff2') format('woff2');font-weight:800;font-display:swap}
-@font-face{font-family:PoppinsBackup;src:url('https://cdn.jsdelivr.net/npm/@fontsource/poppins@5.2.6/files/poppins-latin-400-normal.woff2') format('woff2');font-weight:300 700;font-display:swap}
-@font-face{font-family:PoppinsBackup;src:url('https://cdn.jsdelivr.net/npm/@fontsource/poppins@5.2.6/files/poppins-latin-600-normal.woff2') format('woff2');font-weight:500 700;font-display:swap}
+@font-face{font-family:PoppinsBackup;src:url('assets/poppins-latin-800-normal.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:PoppinsBackup;src:url('assets/poppins-latin-400-normal.woff2') format('woff2');font-weight:300 700;font-display:swap}
+@font-face{font-family:PoppinsBackup;src:url('assets/poppins-latin-600-normal.woff2') format('woff2');font-weight:500 700;font-display:swap}
 :root{--lavender:#e7e3fb;--ink:#0d0b1a;--violet:#5b3bd1;--muted:#4a4568;--nav:var(--ink);--edge:clamp(24px,4.2vw,80px)}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--lavender);color:var(--ink);font-family:Poppins,PoppinsBackup,sans-serif;-webkit-font-smoothing:antialiased}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit}a{color:inherit;text-decoration:none}button,a{touch-action:manipulation}button:focus-visible,a:focus-visible{outline:2px solid currentColor;outline-offset:7px}::selection{background:#5b3bd1;color:white}button{color:inherit}a,button{cursor:pointer}.skip{position:fixed;top:10px;left:10px;z-index:50;transform:translateY(-160%);background:white;padding:12px}.skip:focus{transform:none}
 #loader{position:fixed;inset:0;z-index:100;background:var(--lavender);display:grid;place-content:center;gap:20px;text-align:center;transition:opacity .6s,visibility .6s;pointer-events:none}#loader span{font-size:10px;letter-spacing:.3em}#loader .star{width:48px;margin:auto;animation:turn 3s linear infinite}#loader.gone{opacity:0;visibility:hidden;transition:none}@keyframes turn{to{transform:rotate(360deg)}}
@@ -32,7 +29,7 @@ h1,h2,p{margin:0}h1{position:absolute;top:17%;left:3%;right:3%;font-weight:800;t
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition-duration:.01ms!important}h1 .line span,h2 .line span,.reveal .fade{transform:none;opacity:1}}
 
 /* Botanical campaign refinements: a quieter display face and atmospheric joins. */
-@font-face{font-family:Syne;src:url('https://cdn.jsdelivr.net/npm/@fontsource/syne@5/files/syne-latin-700-normal.woff2') format('woff2');font-weight:600 800;font-display:swap}
+@font-face{font-family:Syne;src:url('assets/syne-latin-700-normal.woff2') format('woff2');font-weight:600 800;font-display:swap}
 h1,h2{font-family:Syne,Poppins,PoppinsBackup,sans-serif;font-weight:700;letter-spacing:-.055em}
 h1{font-size:clamp(64px,8.6vw,146px);line-height:1.04}
 .footer-header h2{font-weight:700}
@@ -50,6 +47,26 @@ h1 .line:nth-child(2) span,h2 .line:nth-child(2) span{transition-delay:.25s}
 .reveal .fade{transition-delay:.38s}.reveal .fade.later{transition-delay:.55s}
 @media(max-width:759px){h1{font-size:clamp(42px,10.4vw,78px);letter-spacing:-.055em}.chapter:before{height:12vh}.botanical-study{width:27vw;height:135px;top:48%;right:-9%;opacity:.45}.drifting-petal{left:12%;top:51%;width:12px;height:26px}.drifting-petal.second{display:none}}
 @media(prefers-reduced-motion:reduce){.chapter-number{opacity:1!important;transform:none!important}h1 .line span,h2 .line span,.reveal .fade{transition:none}}
+
+.berry h2{font-size:clamp(48px,4vw,68px)}
+@media(max-width:759px){.berry h2{font-size:clamp(38px,9.8vw,60px)}}
+h1 .line,h2 .line{padding-bottom:.18em;margin-bottom:-.18em}
+/* One continuous lighting environment; ingredients live outside chapter clips. */
+body{overflow-x:clip;background:#e7e3fb}main{position:relative;z-index:4}
+#world{position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at 58% 36%,var(--world-glow,#f4f0ff),var(--world-base,#dfd8f2));pointer-events:none}
+.chapter{background:transparent;overflow:visible;color:var(--world-ink,#0d0b1a);transition:color .35s}
+.chapter:before,.chapter-bg{display:none}
+.chapter-copy p,.citrus .chapter-copy p{color:inherit;opacity:.78}
+.ingredient-layer{position:fixed;inset:0;z-index:3;pointer-events:none}
+.ingredient{position:absolute;left:-3%;top:36%;width:32vw;height:57vh;object-fit:contain;opacity:var(--ingredient-opacity,1);transform:translateY(var(--ingredient-y,0px)) rotate(-7deg);will-change:transform,opacity}
+.citrus-photo{left:auto;right:-2%;top:55%;width:25vw;height:28vh;opacity:var(--citrus-opacity,0);transform:translateY(var(--ingredient-y,0px)) rotate(-7deg)}
+.berry-photo{opacity:var(--berry-opacity,0);width:30vw;left:-3%;top:43%;transform:translateY(var(--ingredient-y,0px)) rotate(9deg)}
+.chapter-number{color:currentColor;opacity:.045}
+.citrus .chapter-number{color:currentColor}
+.grain{opacity:.025}
+@media(max-width:759px){.ingredient{left:-9%;top:51%;width:41vw;height:36vh}.berry-photo{top:55%;left:-10%;width:41vw;height:32vh}.chapter-number{opacity:.04}}
+@media(max-width:759px){.citrus-photo{left:auto;right:-6%;top:52%;width:34vw;height:20vh}}
+@media(prefers-reduced-motion:reduce){.ingredient{transform:none}}
 </style>
 <noscript><style>#loader{display:none}h1 .line span,h2 .line span,.reveal .fade{transform:none;opacity:1}.scroll-line:after{animation:none}</style></noscript>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
@@ -65,32 +82,32 @@ h1 .line:nth-child(2) span,h2 .line:nth-child(2) span{transition-delay:.25s}
 </nav>
 <canvas id="product3d" aria-label="Animated three-dimensional BLOOMSHIFT soda can"></canvas>
 <div id="fallback" aria-label="BLOOMSHIFT Lavender Haze product illustration"><strong>BLOOM<br>SHIFT<span aria-hidden="true">✦</span></strong><span id="fallback-flavour">Lavender Haze</span><small>BOTANICAL SPARKLING SODA · 330 ML</small></div>
+<div id="world" aria-hidden="true"></div>
+<div class="ingredient-layer" aria-hidden="true"><img class="ingredient lavender-photo" src="assets/lavender-blueberry.png" alt="" fetchpriority="high"><img class="ingredient citrus-photo" src="assets/yuzu-passionfruit.png" alt="" loading="lazy"><img class="ingredient berry-photo" src="assets/hibiscus-raspberry.png" alt="" loading="lazy"></div>
 <main>
 <section id="home" class="chapter hero reveal" aria-labelledby="hero-title">
-<div class="chapter-bg" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
 <div class="hero-kicker fade">Botanical fizz. Beyond ordinary.</div>
 <h1 id="hero-title"><span class="line"><span>Sip outside the</span></span><span class="line"><span>ordinary.</span></span></h1>
 <div class="hero-copy fade later"><p>Nature-inspired flavours.<br>Unexpected fizz. A whole<br>new way to refresh.</p><a class="text-link" href="#flavours">Explore the flavours <span class="arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M3 3h10v10" stroke="currentColor" stroke-width="1.2"/></svg></span></a></div>
-<div class="flower hero-flower" data-parallax="0.055" data-flower="cosmos" aria-hidden="true"><img alt="" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261017_132919_c994332b-7f9d-43b5-933d-1e94faa91dd4.png" fetchpriority="low"></div>
-<div class="botanical-study" aria-hidden="true"><svg viewBox="0 0 180 260" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M90 250C55 175 128 106 87 15" stroke="#6b6680" stroke-width="1.3"/>
-<g fill="#9983b9" stroke="#77618f" stroke-width=".5"><ellipse cx="85" cy="39" rx="7" ry="17" transform="rotate(-23 85 39)"/><ellipse cx="101" cy="59" rx="7" ry="18" transform="rotate(28 101 59)"/><ellipse cx="78" cy="68" rx="8" ry="19" transform="rotate(-37 78 68)"/><ellipse cx="102" cy="88" rx="8" ry="18" transform="rotate(35 102 88)"/><ellipse cx="77" cy="96" rx="8" ry="18" transform="rotate(-30 77 96)"/><ellipse cx="97" cy="116" rx="8" ry="19" transform="rotate(42 97 116)"/></g><path d="M79 197Q35 177 44 146Q74 155 79 197ZM83 170Q131 145 129 126Q95 133 83 170" fill="#777d6a" opacity=".65"/><path d="M79 197 49 155M83 170 124 133" stroke="#d4d3b9" stroke-width=".7"/></svg></div><i class="drifting-petal" aria-hidden="true"></i><i class="drifting-petal second" aria-hidden="true"></i>
+
 <div class="hero-bottom"><div class="micro">Real botanicals.<br>A different kind of buzz.</div><a class="scroll-note" href="#flavours"><span class="scroll-line" aria-hidden="true"></span>Scroll to shift</a></div>
 </section>
 <section id="flavours" class="chapter lavender reveal" aria-labelledby="lavender-title">
 <div class="grain" aria-hidden="true"></div><div class="chapter-number" aria-hidden="true">01</div>
-<div class="flower lavender-flower" data-parallax="0.04" data-flower="cosmos" aria-hidden="true"><img alt="" loading="lazy" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261017_132924_764b726d-d37a-44cc-8eba-662d823d9a4c.png"></div>
+
 <div class="chapter-copy"><div class="eyebrow fade">01 / Lavender Haze</div><h2 id="lavender-title"><span class="line"><span>Nature got</span></span><span class="line"><span>a glow-up.</span></span></h2><p class="fade">Meet Lavender Haze. Juicy blueberry, delicate lavender and perfectly crisp bubbles. A little botanical magic in every sip.</p><div class="tasting fade later">Blueberry <b>×</b> Lavender <b>×</b> A little wonder</div></div>
 <div class="chapter-foot"><span>A softer state of mind</span><div class="rule"></div><button class="flavour-button" data-preview="0">Meet your mellow <span class="arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M3 3h10v10" stroke="currentColor" stroke-width="1.2"/></svg></span></button></div>
 </section>
 <section id="citrus" class="chapter citrus reveal" aria-labelledby="citrus-title">
-<div class="chapter-bg" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div><div class="chapter-number" aria-hidden="true">02</div>
+<div class="grain" aria-hidden="true"></div><div class="chapter-number" aria-hidden="true">02</div>
 <div class="chapter-copy"><div class="eyebrow fade">02 / Citrus Current</div><h2 id="citrus-title"><span class="line"><span>A spark of</span></span><span class="line"><span>something wild.</span></span></h2><p class="fade">Bright yuzu meets tropical passionfruit in a fizzy burst of sunshine. Bold, botanical and impossible to ignore.</p><div class="tasting fade later">Yuzu <b>×</b> Passionfruit <b>×</b> Pure possibility</div></div>
-<div class="flower iris-flower" data-parallax="0.055" data-flower="iris" aria-hidden="true"><img alt="" loading="lazy" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261017_132926_a7892ae5-8052-4e4b-96a8-ccbdcaaaa5ad.png"></div>
+
 <div class="chapter-foot"><span>Follow the bright side</span><div class="rule"></div><button class="flavour-button" data-preview="1">Catch the current <span class="arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M3 3h10v10" stroke="currentColor" stroke-width="1.2"/></svg></span></button></div>
 </section>
 <section id="our-story" class="chapter berry reveal" aria-labelledby="berry-title">
 <div class="grain" aria-hidden="true"></div><div class="chapter-number" aria-hidden="true">03</div>
-<div class="flower berry-flower" data-parallax="0.06" data-flower="passion" aria-hidden="true"><img alt="" loading="lazy" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261017_132921_d71538ea-5066-4372-963a-2f2d6468374f.png"></div>
+
 <div class="chapter-copy"><div class="eyebrow fade">03 / Berry Bloom</div><h2 id="berry-title"><span class="line"><span>Let your</span></span><span class="line"><span>flavour bloom.</span></span></h2><p class="fade">Raspberry meets fragrant hibiscus in a refreshingly unexpected blend. Bright, playful and made for moments worth sharing.</p><div class="tasting fade later">Raspberry <b>×</b> Hibiscus <b>×</b> Good company</div><p class="fade" style="font-size:10px;margin-top:18px">Our story? A belief that nature still has a few surprises up its sleeve. We’re here to put them in a can.</p></div>
 <div class="chapter-foot"><span>Made for your kind of moment</span><div class="rule"></div><button class="flavour-button" data-preview="2">Find your bloom <span class="arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M3 3h10v10" stroke="currentColor" stroke-width="1.2"/></svg></span></button></div>
 </section>
@@ -123,6 +140,7 @@ const observer = new IntersectionObserver(entries => entries.forEach(e => {
   else if(e.boundingClientRect.top>innerHeight||e.boundingClientRect.bottom<0)chapter.classList.remove('is-visible');
 }),{threshold:.12,rootMargin:'0px 0px -12% 0px'});
 chapters.forEach(c=>observer.observe(c.querySelector('.chapter-copy,.footer-header,h1')));
+document.querySelectorAll('.ingredient').forEach(img=>img.addEventListener('error',()=>{img.hidden=true}));
 const previewNames=['Lavender Haze','Citrus Current','Berry Bloom'];
 window.updateFlavourUI = value => {
   document.querySelectorAll('.flavour-dock button').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.preview)===value));
@@ -133,27 +151,31 @@ window.updateFlavourUI = value => {
 document.querySelectorAll('[data-preview]').forEach(b=>b.addEventListener('click',()=>{window.Bloom.manual={flavour:Number(b.dataset.preview),chapter:window.Bloom.chapter,at:performance.now()};window.updateFlavourUI(Number(b.dataset.preview))}));
 let toastTimer;
 document.querySelectorAll('[data-social]').forEach(b=>b.addEventListener('click',()=>{const t=document.querySelector('#toast');t.textContent=`${b.dataset.social}: our next chapter is still growing. Stay curious.`;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3500)}));
-/* Botanical fallback artwork: layered, veined vector petals behind the supplied PNGs. */
-document.querySelectorAll('[data-flower]').forEach((flower,index)=>{
-  const iris=flower.dataset.flower==='iris',passion=flower.dataset.flower==='passion';
-  const petals=iris?6:passion?12:9, id=`petal${index}`;
-  let svg=`<svg viewBox="0 0 500 550" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="${id}"><stop stop-color="${iris?'#c8baff':passion?'#f3b7eb':'#d6baf7'}"/><stop offset=".46" stop-color="${iris?'#7960d3':'#986ac9'}"/><stop offset="1" stop-color="${iris?'#392365':'#5e3987'}"/></radialGradient><filter id="blur${index}"><feGaussianBlur stdDeviation=".5"/></filter></defs><path d="M245 260Q185 420 230 560" fill="none" stroke="#516b4e" stroke-width="9"/><path d="M225 442Q120 370 163 352Q217 360 225 442" fill="#6d8161"/><g transform="translate(250 240)">`;
-  for(let j=0;j<petals;j++){
-    const angle=j*360/petals;
-    svg+=`<g transform="rotate(${angle})"><path d="M0 12C-22-22-89-99-69-160C-52-207-18-190 0-205C24-184 64-202 78-158C99-94 25-16 0 12" fill="url(#${id})" stroke="#a080ca" stroke-width=".7"/>`;
-    for(let k=-3;k<=3;k++)svg+=`<path d="M0 0Q${k*16} -85 ${k*18} -174" fill="none" stroke="#e6d6f5" stroke-width=".8" opacity=".3"/>`;
-    svg+='</g>';
-  }
-  if(passion)for(let j=0;j<70;j++)svg+=`<path d="M0 0L${Math.cos(j*6.283/70)*103} ${Math.sin(j*6.283/70)*103}" stroke="${j%2?'#ead8ed':'#4d2765'}" stroke-width="2"/>`;
-  svg+='<circle r="28" fill="#5c394b"/>';
-  for(let j=0;j<65;j++){const a=j*2.4,r=Math.sqrt(j)*3.3;svg+=`<circle cx="${Math.cos(a)*r}" cy="${Math.sin(a)*r}" r="2.6" fill="${j%3?'#edcb75':'#ad8b54'}"/>`}
-  flower.insertAdjacentHTML('beforeend',svg+'</g></svg>');
-  const img=flower.querySelector('img');img.addEventListener('load',()=>img.classList.add('loaded'));img.addEventListener('error',()=>img.hidden=true);if(img.complete&&img.naturalWidth)img.classList.add('loaded');
-});
 let lastChapter=-1, offsets=[],lastScroll=-1;
 const flowers=[...document.querySelectorAll('.flower')];
 function measureChapters(){offsets=chapters.map(c=>c.offsetTop);window.Bloom.offsets=offsets;lastScroll=-1}
 measureChapters();addEventListener('resize',measureChapters,{passive:true});
+const scenePalettes=[[[244,240,255],[223,216,242]],[[247,244,255],[228,224,250]],[[83,46,146],[40,18,95]],[[250,232,242],[233,224,246]],[[248,245,255],[228,224,250]]];
+const photoLevels=[1,.62,0,.85,.25];
+function blendRGB(a,b,t){return `rgb(${a.map((v,i)=>Math.round(v+(b[i]-v)*t)).join(',')})`}
+function updateAtmosphere(y,vh){
+ let i=0;for(let j=1;j<offsets.length;j++)if(y>=offsets[j]-vh*.45)i=j;
+ const t=i===0?1:Math.max(0,Math.min(1,(y-(offsets[i]-vh*.45))/(vh*.5)));
+ const e=t*t*(3-2*t),a=scenePalettes[Math.max(0,i-1)],b=scenePalettes[i];
+ const dark=(i===2&&e>.64)||(i===3&&e<.36);
+ document.body.style.setProperty('--world-glow',blendRGB(a[0],b[0],e));
+ document.body.style.setProperty('--world-base',blendRGB(a[1],b[1],e));
+ document.body.style.setProperty('--world-ink',dark?'#f4efff':'#0d0b1a');
+ document.body.style.setProperty('--nav',dark?'#fff':'#0d0b1a');
+ const prev=Math.max(0,i-1);
+ const lavender=(prev<2||prev===4?photoLevels[prev]:0)*(1-e)+(i<2||i===4?photoLevels[i]:0)*e;
+ const berry=(prev===3?photoLevels[prev]:0)*(1-e)+(i===3?photoLevels[i]:0)*e;
+ document.body.style.setProperty('--ingredient-opacity',i===2?photoLevels[prev]*Math.max(0,1-e*2.2):lavender);
+ document.body.style.setProperty('--berry-opacity',berry);
+ document.body.style.setProperty('--citrus-opacity',(prev===2?1:0)*(1-e)+(i===2?1:0)*e);
+ document.body.style.setProperty('--ingredient-y',`${Bloom.reduced?0:Math.sin(y/(vh*1.7))*24}px`);
+ return dark;
+}
 function updatePage(){
   const y=scrollY, vh=innerHeight;
   let nearest=0;for(let i=1;i<offsets.length;i++)if(y+vh*.48>=offsets[i])nearest=i;
@@ -165,8 +187,8 @@ function updatePage(){
     lastChapter=nearest;
   }
   if(lastScroll!==y){
-    document.body.classList.toggle('dark-active',y+60>=offsets[2]+vh*(innerWidth<760?.06:.12)&&y+60<offsets[3]+vh*(innerWidth<760?.06:.12));
-    const bottomDark=y+vh-50>=offsets[2]+vh*(innerWidth<760?.06:.12)&&y+vh-50<offsets[3]+vh*(innerWidth<760?.06:.12);
+    const atmosphereDark=updateAtmosphere(y,vh);document.body.classList.toggle('dark-active',atmosphereDark);
+    const bottomDark=atmosphereDark;
     document.querySelector('.badge').style.color=bottomDark?'#fff':'#0d0b1a';
     document.querySelector('.dock-label').style.color=bottomDark?'#e4d9f6':'#4a4568';
     flowers.forEach((f,i)=>{const delta=y-offsets[i];const d=window.Bloom.reduced?0:delta*Number(f.dataset.parallax);f.style.translate=`0 ${Math.max(-90,Math.min(90,d))}px`;f.style.rotate=`${window.Bloom.reduced?0:Math.max(-8,Math.min(8,delta*.006))}deg`});
@@ -178,7 +200,7 @@ requestAnimationFrame(updatePage);
 </script>
 <script type="module">
 import * as THREE from 'three';
-import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+
 const state=window.Bloom;
 const TAU=Math.PI*2,rad=Math.PI/180;
 let renderer,scene,camera,flightGroup,productRoot,orbit,labels=[],particleMesh,condensation;
@@ -230,37 +252,38 @@ function buildLabel(index){
   ctx.save();ctx.translate(1024,1105);ctx.strokeStyle='#38234c';ctx.lineWidth=3;
   for(let k=0;k<8;k++){ctx.rotate(TAU/8);ctx.beginPath();ctx.ellipse(0,-53,17,46,0,0,TAU);ctx.stroke()}
   ctx.beginPath();ctx.arc(0,0,11,0,TAU);ctx.fill();ctx.restore();
-  ctx.font='600 43px Poppins, PoppinsBackup, sans-serif';ctx.fillText(names[index],1024,1350);
-  ctx.font='400 25px Poppins, PoppinsBackup, sans-serif';ctx.fillText(notes[index],1024,1415);
+  ctx.font='600 55px Poppins, PoppinsBackup, sans-serif';ctx.fillText(names[index],1024,1350);
+  ctx.font='400 31px Poppins, PoppinsBackup, sans-serif';ctx.fillText(notes[index],1024,1415);
   ctx.beginPath();ctx.moveTo(813,1500);ctx.lineTo(1235,1500);ctx.strokeStyle='#23143855';ctx.lineWidth=2;ctx.stroke();
   ctx.font='400 23px Poppins, PoppinsBackup, sans-serif';ctx.fillText('BOTANICAL SPARKLING SODA',1024,1570);
   ctx.font='500 31px Poppins, PoppinsBackup, sans-serif';ctx.fillText('0.0% ALC.    ✦    330 ML',1024,1770);
   ctx.textAlign='left';ctx.save();ctx.translate(200,1350);ctx.rotate(-Math.PI/2);ctx.font='400 22px Poppins, PoppinsBackup, sans-serif';ctx.fillText('A LITTLE CURIOSITY IN EVERY CAN.  /  BLOOMSHIFT',0,0);ctx.restore();
-  for(let i=0;i<34;i++){ctx.fillStyle='#231438';ctx.fillRect(1660+i*5,1480,2+(i%3),190)}
+
   const texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=Math.min(renderer.capabilities.getMaxAnisotropy(),16);return texture;
 }
 function addMesh(geometry,material,parent=productRoot){const mesh=new THREE.Mesh(geometry,material);parent.add(mesh);return mesh}
 function makeCan(){
-  aluminium=new THREE.MeshStandardMaterial({color:'#dedee8',metalness:1,roughness:.24,envMapIntensity:1.15});
+  aluminium=new THREE.MeshStandardMaterial({color:'#cdd0d8',metalness:1,roughness:.22,envMapIntensity:1.3});
   const darkMetal=new THREE.MeshStandardMaterial({color:'#767786',metalness:1,roughness:.3});
-  const profile=[new THREE.Vector2(0,-1.22),new THREE.Vector2(.45,-1.22),new THREE.Vector2(.49,-1.19),new THREE.Vector2(.51,-1.12),new THREE.Vector2(.565,-1.06),new THREE.Vector2(.575,-.99),new THREE.Vector2(.575,.94),new THREE.Vector2(.565,1.02),new THREE.Vector2(.52,1.11),new THREE.Vector2(.49,1.15),new THREE.Vector2(.49,1.20),new THREE.Vector2(0,1.20)];
+  const profile=[new THREE.Vector2(0,-1.22),new THREE.Vector2(.45,-1.22),new THREE.Vector2(.49,-1.19),new THREE.Vector2(.51,-1.12),new THREE.Vector2(.565,-1.06),new THREE.Vector2(.575,-.99),new THREE.Vector2(.575,.94),new THREE.Vector2(.573,.975),new THREE.Vector2(.566,1.005),new THREE.Vector2(.55,1.04),new THREE.Vector2(.532,1.075),new THREE.Vector2(.52,1.11),new THREE.Vector2(.49,1.15),new THREE.Vector2(.49,1.20),new THREE.Vector2(0,1.20)];
   const body=addMesh(new THREE.LatheGeometry(profile,128),aluminium);body.name='canBody';
   const labelGeo=new THREE.CylinderGeometry(.577,.577,1.99,128,1,true);
   for(let i=0;i<3;i++){
-    const material=new THREE.MeshStandardMaterial({map:buildLabel(i),metalness:.24,roughness:.38,transparent:i!==0,opacity:i===0?1:0,depthWrite:i===0,polygonOffset:true,polygonOffsetFactor:-1-i,polygonOffsetUnits:-1-i});
+    const material=new THREE.MeshStandardMaterial({map:buildLabel(i),metalness:.12,roughness:.43,transparent:i!==0,opacity:i===0?1:0,depthWrite:i===0,polygonOffset:true,polygonOffsetFactor:-1-i,polygonOffsetUnits:-1-i});
     const mesh=addMesh(labelGeo,material);mesh.rotation.y=Math.PI;mesh.position.y=-.015;mesh.renderOrder=2+i;mesh.name=`label-${i}`;labels.push(mesh);
   }
   for(const y of [-1.19,1.20]){const rim=addMesh(new THREE.TorusGeometry(.496,.027,12,96),aluminium);rim.rotation.x=Math.PI/2;rim.position.y=y;rim.name='aluminiumRim'}
   const lid=addMesh(new THREE.CylinderGeometry(.49,.49,.019,96),aluminium);lid.position.y=1.19;lid.name='lid';
+  for(const radius of [.368,.448]){const stamp=addMesh(new THREE.TorusGeometry(radius,.0035,6,80),darkMetal);stamp.rotation.x=Math.PI/2;stamp.position.y=1.202}
   const inner=addMesh(new THREE.TorusGeometry(.419,.008,8,80),darkMetal);inner.rotation.x=Math.PI/2;inner.position.y=1.204;
   const opening=addMesh(new THREE.SphereGeometry(1,24,12),new THREE.MeshStandardMaterial({color:'#27232e',metalness:.65,roughness:.35}));opening.scale.set(.125,.004,.18);opening.position.set(0,1.205,.19);
   const tabShape=new THREE.Shape();tabShape.absellipse(0,0,.11,.185,0,TAU,false,0);const hole=new THREE.Path();hole.absellipse(0,-.035,.058,.092,0,TAU,true,0);tabShape.holes.push(hole);
   const tab=addMesh(new THREE.ExtrudeGeometry(tabShape,{depth:.018,bevelEnabled:true,bevelSegments:3,steps:1,bevelSize:.009,bevelThickness:.006}),aluminium);tab.rotation.x=-Math.PI/2;tab.position.set(0,1.213,-.035);tab.name='ringPull';
   const rivet=addMesh(new THREE.SphereGeometry(.027,16,8),aluminium);rivet.position.set(0,1.237,-.14);rivet.scale.y=.3;
   const dropGeo=new THREE.SphereGeometry(1,mobile()?10:16,mobile()?8:12);
-  const dropMat=new THREE.MeshPhysicalMaterial({color:'#ffffff',metalness:.04,roughness:.04,transmission:0,thickness:.08,transparent:true,opacity:.67,envMapIntensity:1.8});
+  const dropMat=new THREE.MeshPhysicalMaterial({color:'#dfe6ee',metalness:.05,roughness:.06,clearcoat:1,transmission:0,thickness:.04,transparent:true,opacity:.46,envMapIntensity:1.25});
   condensation=new THREE.InstancedMesh(dropGeo,dropMat,mobile()?80:155);condensation.name='condensationDroplets';
-  for(let i=0;i<condensation.count;i++){const a=random()*TAU,y=(random()-.5)*1.94,size=.006+random()*.014;helper.position.set(Math.sin(a)*.584,y,Math.cos(a)*.584);helper.scale.set(size,size*(1.05+random()*.6),size*.65);helper.rotation.set(0,a,0);helper.updateMatrix();condensation.setMatrixAt(i,helper.matrix)}
+  for(let i=0;i<condensation.count;i++){const a=random()*TAU,y=(random()-.5)*1.94,size=.004+random()*.009;helper.position.set(Math.sin(a)*.584,y,Math.cos(a)*.584);helper.scale.set(size,size*(1.05+random()*.6),size*.65);helper.rotation.set(0,a,0);helper.updateMatrix();condensation.setMatrixAt(i,helper.matrix)}
   productRoot.add(condensation);
   runningDrops=new THREE.InstancedMesh(dropGeo,dropMat,7);runningDrops.name='slidingCondensation';
   for(let i=0;i<7;i++)dropPhases.push({angle:(random()-.5)*2.3,phase:random()*1.8,speed:.025+random()*.02,size:.008+random()*.005});
@@ -269,11 +292,11 @@ function makeCan(){
 function makeOrbit(){
   orbit=new THREE.Group();orbit.name='liquidOrbit';flightGroup.add(orbit);
   const dropletGeo=new THREE.SphereGeometry(1,12,8);
-  physicalMaterial=new THREE.MeshPhysicalMaterial({color:palettes[0],metalness:.12,roughness:.12,clearcoat:1,clearcoatRoughness:.05,transparent:true,opacity:.78,envMapIntensity:1.5});
-  particleCount=mobile()?60:132;particleMesh=new THREE.InstancedMesh(dropletGeo,physicalMaterial,particleCount);particleMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);orbit.add(particleMesh);particleMesh.name='orbitDroplets';
+  physicalMaterial=new THREE.MeshPhysicalMaterial({color:palettes[0],metalness:.12,roughness:.12,clearcoat:1,clearcoatRoughness:.05,transparent:true,opacity:.5,envMapIntensity:1.1});
+  particleCount=mobile()?28:52;particleMesh=new THREE.InstancedMesh(dropletGeo,physicalMaterial,particleCount);particleMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);orbit.add(particleMesh);particleMesh.name='orbitDroplets';
   for(let i=0;i<particleCount;i++)particles.push({angle:random()*TAU,radius:.85+random()*.6,y:(random()-.5)*2.7,size:.009+random()*.027,speed:.17+random()*.3,phase:random()*TAU});
   const sparkMat=new THREE.MeshStandardMaterial({color:'#fff6dd',emissive:'#fff3dc',emissiveIntensity:.3,roughness:.2,metalness:.2});
-  sparkleMesh=new THREE.InstancedMesh(new THREE.OctahedronGeometry(.013),sparkMat,mobile()?18:40);sparkleMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);orbit.add(sparkleMesh);sparkleMesh.name='sparkleParticles';
+  sparkleMesh=new THREE.InstancedMesh(new THREE.OctahedronGeometry(.013),sparkMat,mobile()?18:40);sparkleMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);sparkleMesh.visible=false;orbit.add(sparkleMesh);sparkleMesh.name='sparkleParticles';
   ribbonMaterial=new THREE.MeshPhysicalMaterial({color:palettes[0],metalness:.2,roughness:.075,clearcoat:1,transparent:true,opacity:.48,transmission:0,thickness:.2,side:THREE.DoubleSide,depthWrite:false,envMapIntensity:1.7});
   ribbonMaterial.onBeforeCompile=shader=>{
     shader.uniforms.uFlowTime={value:0};shader.uniforms.uMotion={value:1};
@@ -288,20 +311,7 @@ function makeOrbit(){
     for(let i=0;i<pos.count;i++){const u=Math.floor(i/9)/140,taper=Math.pow(Math.sin(u*Math.PI),.65),shrink=(1-taper)*(r===0?.026:.013);pos.setXYZ(i,pos.getX(i)-normal.getX(i)*shrink,pos.getY(i)-normal.getY(i)*shrink,pos.getZ(i)-normal.getZ(i)*shrink)}
     geo.computeVertexNormals();const mesh=new THREE.Mesh(geo,ribbonMaterial);mesh.name='liquidRibbon';mesh.rotation.z=.22+r*.3;orbit.add(mesh);ribbons.push(mesh);
   }
-  const petalGeo=new THREE.SphereGeometry(1,12,8);
-  petalMaterials=[0,1,2].map(i=>new THREE.MeshStandardMaterial({color:palettes[i],metalness:.05,roughness:.52,side:THREE.DoubleSide}));
-  citrusMaterial=new THREE.MeshStandardMaterial({color:'#ffe189',roughness:.48,metalness:.06});
-  const rindGeo=new THREE.CylinderGeometry(.15,.15,.025,40),fleshGeo=new THREE.CylinderGeometry(.13,.13,.028,40);
-  const rindMat=new THREE.MeshStandardMaterial({color:'#d1bd42',roughness:.55}),veinMat=new THREE.LineBasicMaterial({color:'#fff3c1'});
-  const veinPositions=[];for(let k=0;k<8;k++)veinPositions.push(0,0,.017,Math.cos(k*TAU/8)*.127,Math.sin(k*TAU/8)*.127,.017);
-  const veinGeo=new THREE.BufferGeometry();veinGeo.setAttribute('position',new THREE.Float32BufferAttribute(veinPositions,3));
-  for(let i=0;i<(mobile()?5:9);i++){
-    const group=new THREE.Group();const petal=new THREE.Mesh(petalGeo,petalMaterials[0]);petal.scale.set(.065,.2,.019);petal.rotation.z=.5;group.add(petal);
-    const slice=new THREE.Group();const rind=new THREE.Mesh(rindGeo,rindMat);rind.rotation.x=Math.PI/2;slice.add(rind);
-    const flesh=new THREE.Mesh(fleshGeo,citrusMaterial);flesh.rotation.x=Math.PI/2;slice.add(flesh);
-    slice.add(new THREE.LineSegments(veinGeo,veinMat));
-    group.add(slice);orbit.add(group);botanicals.push({group,petal,slice,phase:random()*TAU,radius:1.25+random()*.5,y:(random()-.5)*2.5});
-  }
+
 }
 function resize(){
  width=innerWidth;height=innerHeight;camera.aspect=width/height;camera.updateProjectionMatrix();renderer.setSize(width,height);renderer.setPixelRatio(Math.min(devicePixelRatio,mobile()?1.5:1.75));viewH=2*Math.tan(15*rad)*camera.position.z;viewW=viewH*camera.aspect;
@@ -365,7 +375,7 @@ function animate(now){
  ribbons.forEach((r,i)=>{r.rotation.y=elapsed*(i?-.10:.12)*flow;r.rotation.x=Math.sin(elapsed*.4)*.12*flow;r.scale.set(1+expansion*.32,1+Math.sin(elapsed*.7)*.05*flow,1+expansion*.32)});
  if(ribbonShader){ribbonShader.uniforms.uFlowTime.value=elapsed*flow;ribbonShader.uniforms.uMotion.value=flow}
  ribbonMaterial.opacity=reduced?.18:.27+travel*.25+intensity*.06;
- botanicals.forEach((o,i)=>{const angle=o.phase+elapsed*.13*flow;o.group.position.set(Math.cos(angle)*(o.radius+expansion*.3),o.y+Math.sin(elapsed*.6*flow+o.phase)*.15,Math.sin(angle)*o.radius);o.group.rotation.set(elapsed*.18*flow+i,elapsed*.12*flow+i,angle);o.slice.visible=weights[1]>.45;o.petal.visible=!o.slice.visible;o.petal.material=petalMaterials[weights[2]>.5?2:0];o.group.scale.setScalar(.7+.35*intensity)});
+
  keyLight.position.x=3+Math.sin(elapsed*.3)*.5*flow;rimLight.intensity=idx===2?6:3.3;
  if(runningDrops){
    for(let i=0;i<dropPhases.length;i++){
@@ -385,9 +395,12 @@ async function init(){
  try{
    renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'high-performance'});renderer.setClearColor(0x000000,0);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
    scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(30,innerWidth/innerHeight,.1,50);camera.position.set(0,0,11);
-   const pmrem=new THREE.PMREMGenerator(renderer),room=new RoomEnvironment();scene.environment=pmrem.fromScene(room,.04).texture;room.dispose();pmrem.dispose();
-   scene.add(new THREE.HemisphereLight('#f8f3ff','#554073',2.2));
-   keyLight=new THREE.DirectionalLight('#fff3df',4);keyLight.position.set(3,5,5);scene.add(keyLight);
+   const studio=new THREE.Scene();studio.background=new THREE.Color('#777180');
+   const panels=[[5,1.2,-3,2,4],[-4,1,2,1.8,5],[0,5,0,4,3]];
+   for(const [x,y,z,w,h] of panels){const panel=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({color:'#fff8f0',side:THREE.DoubleSide}));panel.position.set(x,y,z);panel.lookAt(0,0,0);studio.add(panel)}
+   const pmrem=new THREE.PMREMGenerator(renderer);scene.environment=pmrem.fromScene(studio,.025).texture;studio.traverse(o=>{o.geometry?.dispose();o.material?.dispose()});pmrem.dispose();
+   scene.add(new THREE.HemisphereLight('#f8f3ff','#554073',1.5));
+   keyLight=new THREE.DirectionalLight('#fff3df',2.5);keyLight.position.set(3,5,5);scene.add(keyLight);
    rimLight=new THREE.DirectionalLight('#ad94ff',3.3);rimLight.position.set(-3,2,-3);scene.add(rimLight);
    const strip=new THREE.DirectionalLight('#ffffff',2);strip.position.set(-4,1,5);scene.add(strip);
    flightGroup=new THREE.Group();flightGroup.name='flightGroup';scene.add(flightGroup);productRoot=new THREE.Group();productRoot.name='productRoot';flightGroup.add(productRoot);
