@@ -1,6 +1,6 @@
 # BLOOMSHIFT
 
-A standalone botanical soda campaign. Vanilla HTML/CSS/JavaScript and Three.js **0.160.0**. No package installation, framework or build step.
+A static botanical drinks campaign, built with vanilla HTML/CSS/JavaScript and Three.js **0.160.0**. No framework, package installation or build step.
 
 ## Run
 
@@ -9,16 +9,23 @@ cd /workspace/soda
 python -m http.server 3000 --bind 0.0.0.0
 ```
 
-Open the site through your local server. On Vercel select **Other**, no build command, and the repository root as the output directory. All application code lives in `index.html`.
+Vercel: use **Other**, no build command and the repository root as the output directory (`vercel.json` provides these settings).
 
-Display headings use Syne; body text and product packaging retain Poppins. A single fixed lighting environment changes continuously between chapter palettes, and masked text reveals replay when a chapter returns to view. Packaging artwork renders at 4096 pixels on desktop and 2048 pixels on phones. Seven small condensation beads slowly slide down the can surface.
+## Design and implementation
 
-Three.js is imported from jsDelivr. Fonts and ingredient cutouts are hosted locally under `assets/`, so visual assets do not depend on external image hosts. The three ingredient compositions are generated artwork guided by the photographic references: lavender/blueberries, yuzu/passionfruit, and hibiscus/raspberries. They sit outside chapter containers and crossfade without rectangular section clipping. No additional supplied campaign image was attached to the refinement brief. If modules or WebGL fail, a CSS product illustration and the content remain accessible. Missing ingredient images are hidden cleanly. No models, keys or backend services are required.
+- `index.html`: five semantic chapters, accessible navigation and flavour controls.
+- `site.css`: one stylesheet with Instrument Serif display typography, Poppins body text, cream/plum/blush palettes and a separate stacked composition below 900px.
+- `app.js`: chapter reveals, continuous palette transitions, manual flavour state, photographic-stage compositing and independent loading/fallback handling.
+- `scene.js`: the actual procedural Three.js can, reflection studio, three canvas-generated packaging textures, instanced condensation, seven sliding water beads, restrained liquid geometry, pointer response and damped scroll flight.
 
-## Experience
+The product remains a live 3D model throughout. Generated photographic backgrounds in `assets/stage-*.png` provide an underwater lavender setting, a warm citrus studio and a coral hibiscus studio. They were art-directed from the supplied beverage references; the reference brands and their packaging are not used. The photographed environments and can labels crossfade using the same flavour weights. Fonts and photographic artwork are hosted locally. Three.js modules load from jsDelivr.
 
-One procedural aluminium can uses a lathed body, metal rims and lid, an extruded ring pull, instanced condensation, three canvas-generated packaging textures, instanced orbit droplets, tapered tube ribbons and a reduced water orbit. Ingredient photography supplies the botanical detail, replacing the old flat decorative petals and citrus discs. The reflection environment uses three studio panels, with lid stamping and controlled metal roughness. Scroll continuously interpolates five flight poses using cubic easing and delta-time damping. Labels crossfade using weighted transparent layers. Pointer movement influences orientation. Manual flavour selection stays active until the next scroll chapter, then returns to the story.
+The large decorative chapter-number layer has been removed. Chapter indices are small inline text, including under reduced motion. This avoids the previous reduced-motion opacity override that made oversized numerals obscure headings. The layout keeps the resting product and copy in separate regions; on phones and portrait tablets the copy sits above the product. Incoming mobile copy reveals at the chapter’s reading position so it does not scroll across the fixed product.
 
-Mobile has a separate flight path and fewer particles. Reduced motion suppresses spins, hovering and pointer movement. The page stops WebGL rendering while hidden. Social controls explain their concept status without navigating to fake accounts. This is a fictional campaign, not an online shop.
+Manual flavour selection overrides the current chapter until a new chapter becomes active. Reduced motion greatly reduces product motion and shows text without reveals. Hidden pages pause WebGL rendering. The loader is removed after the first frame or a maximum 2500 ms. Module/WebGL failure retains a CSS product preview, readable copy, working anchors and a flavour selector. Missing stage images are hidden, revealing the stage colour. Social controls identify their concept status without navigating to fake accounts.
 
-Each cloud task is already isolated. Use this checkout directly; do not create a worktree unless explicitly requested. Browser validation evidence is in ignored `test-results/art-direction/` in the prepared environment. `window.__bloom.snapshot()` provides read-only motion/allocation diagnostics.
+## Validation
+
+Chromium checks and screenshots are retained in ignored `test-results/redesign/` in the prepared environment. Checks cover all five chapters, scroll transitions, real product motion, pointer response, label/photo crossfades, condensation movement, manual selection and chapter reset, stable geometry allocation, navigation and loading failures. The actual projected can bounds were checked against copy at 1440, 783, 390 and 360 pixels. Reduced-motion checks include the original problem width. Browser timing under software rendering is not a physical-device performance benchmark.
+
+`window.__bloom.snapshot()` exposes read-only animation diagnostics. Use the existing checkout directly; each cloud task is isolated, so do not create a worktree unless explicitly requested.

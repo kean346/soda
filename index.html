@@ -1,424 +1,59 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#e7e3fb">
-<meta name="description" content="BLOOMSHIFT. Botanical sparkling soda. Three unexpected flavours, one extraordinary little universe.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3f0e9"><meta name="description" content="Botanical sparkling soda for a life less ordinary. Discover Lavender Haze, Citrus Current and Berry Bloom.">
 <title>BLOOMSHIFT — Sip outside the ordinary.</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23e7e3fb'/%3E%3Cpath d='M32 5Q34 30 59 32Q34 34 32 59Q30 34 5 32Q30 30 32 5' fill='%235b3bd1'/%3E%3C/svg%3E">
-<style>
-/* A package-hosted copy keeps the same typeface available if Google Fonts fails. */
-@font-face{font-family:PoppinsBackup;src:url('assets/poppins-latin-800-normal.woff2') format('woff2');font-weight:800;font-display:swap}
-@font-face{font-family:PoppinsBackup;src:url('assets/poppins-latin-400-normal.woff2') format('woff2');font-weight:300 700;font-display:swap}
-@font-face{font-family:PoppinsBackup;src:url('assets/poppins-latin-600-normal.woff2') format('woff2');font-weight:500 700;font-display:swap}
-:root{--lavender:#e7e3fb;--ink:#0d0b1a;--violet:#5b3bd1;--muted:#4a4568;--nav:var(--ink);--edge:clamp(24px,4.2vw,80px)}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--lavender);color:var(--ink);font-family:Poppins,PoppinsBackup,sans-serif;-webkit-font-smoothing:antialiased}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit}a{color:inherit;text-decoration:none}button,a{touch-action:manipulation}button:focus-visible,a:focus-visible{outline:2px solid currentColor;outline-offset:7px}::selection{background:#5b3bd1;color:white}button{color:inherit}a,button{cursor:pointer}.skip{position:fixed;top:10px;left:10px;z-index:50;transform:translateY(-160%);background:white;padding:12px}.skip:focus{transform:none}
-#loader{position:fixed;inset:0;z-index:100;background:var(--lavender);display:grid;place-content:center;gap:20px;text-align:center;transition:opacity .6s,visibility .6s;pointer-events:none}#loader span{font-size:10px;letter-spacing:.3em}#loader .star{width:48px;margin:auto;animation:turn 3s linear infinite}#loader.gone{opacity:0;visibility:hidden;transition:none}@keyframes turn{to{transform:rotate(360deg)}}
-.star{display:inline-block;flex:none;width:26px;height:26px;fill:currentColor}.nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:30px var(--edge);color:var(--nav);transition:color .5s,background .5s}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-1px}.brand .star{transition:transform .7s}.brand:hover .star{transform:rotate(90deg)}.nav-center{display:flex;gap:36px;font-size:12px}.nav-center a{position:relative;padding:8px 0}.nav-center a:after{content:'';position:absolute;bottom:3px;left:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s}.nav-center a:hover:after{transform:scaleX(1)}.nav-cta{font-size:11px;border:1px solid currentColor;border-radius:40px;padding:12px 20px;display:flex;gap:22px;align-items:center;transition:background .3s,color .3s}.nav-cta:hover{background:var(--nav);color:var(--lavender)}.arrow{display:inline-grid;place-items:center;width:32px;height:32px;border:1px solid currentColor;border-radius:50%;font-size:17px;transition:transform .3s}.text-link{display:inline-flex;align-items:center;gap:20px;font-size:12px;font-weight:500}.text-link:hover .arrow{transform:rotate(-35deg)}
-#product3d{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5;opacity:0;transition:opacity 1s}.webgl-ready #product3d{opacity:1}.chapter{position:relative;min-height:800px;height:100svh;isolation:isolate;overflow:clip}.chapter-bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center;opacity:.42}.hero{background:radial-gradient(ellipse at 52% 60%,#f3f0ff 0%,#e7e3fb 56%,#d9d3f4 100%)}.hero .chapter-bg{background-image:url('https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261016_130303_301c35dd-e2d1-4b40-a396-2b53f884d787.png');mix-blend-mode:multiply;opacity:.45}.grain{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23000' filter='url(%23n)' opacity='.7' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}.section-topline{position:absolute;left:var(--edge);right:var(--edge);top:120px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:var(--muted)}
-h1,h2,p{margin:0}h1{position:absolute;top:17%;left:3%;right:3%;font-weight:800;text-align:center;font-size:clamp(64px,8.9vw,152px);line-height:1.02;letter-spacing:-.055em;z-index:3}h1 .line,h2 .line{display:block;overflow:hidden;padding:0 .07em .09em;margin-bottom:-.09em}h1 .line span,h2 .line span{display:block;transform:translateY(115%);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}.is-visible h1 .line span,.is-visible h2 .line span{transform:none}h1 .line:nth-child(2) span,h2 .line:nth-child(2) span{transition-delay:.12s}.hero-kicker{position:absolute;top:13.3%;left:0;right:0;text-align:center;letter-spacing:.22em;text-transform:uppercase;font-size:9px;color:var(--muted)}.hero-copy{position:absolute;right:var(--edge);top:62%;width:205px;z-index:8}.hero-copy p{font-size:13px;line-height:1.9;color:var(--muted);margin-bottom:25px}.hero-bottom{position:absolute;bottom:40px;left:var(--edge);right:var(--edge);z-index:8;display:flex;align-items:end;justify-content:space-between}.micro{font-size:9px;text-transform:uppercase;letter-spacing:.16em;line-height:1.9}.scroll-note{display:flex;gap:12px;align-items:center;font-size:9px;letter-spacing:.12em;text-transform:uppercase}.scroll-note .scroll-line{width:1px;height:36px;background:#0d0b1a44;position:relative;overflow:hidden}.scroll-line:after{content:'';position:absolute;inset:0;background:var(--ink);animation:scroll-line 2.5s ease-in-out infinite}@keyframes scroll-line{0%{transform:translateY(-100%)}70%,100%{transform:translateY(100%)}}
-.flower{position:absolute;z-index:2;pointer-events:none;will-change:transform}.flower img,.flower svg{position:absolute;width:100%;height:100%;object-fit:contain}.flower img{z-index:1;visibility:hidden}.flower img.loaded{visibility:visible}.flower img.loaded+svg{opacity:0}.hero-flower{width:48vw;height:65vh;bottom:-18%;left:-14%;filter:drop-shadow(15px 25px 32px #54409833)}.lavender-flower{width:38vw;height:55vh;top:-22%;left:-10%;transform:rotate(170deg)}.iris-flower{width:40vw;height:55vh;bottom:-20%;right:-12%;filter:drop-shadow(-10px 10px 30px #160d3866)}.berry-flower{width:34vw;height:55vh;bottom:-17%;left:-15%}
-.lavender{background:radial-gradient(ellipse at 25% 55%,#f7f4ff,#e4e0fa 65%)}.citrus{background:radial-gradient(ellipse at 77% 48%,#6537b5,#3a1f8c 58%,#28125f);color:#f4efff}.citrus .chapter-bg{background-image:url('https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261017_132814_c3d2b090-c27d-49d1-8107-66d0cfa216c2.png');opacity:.36}.berry{background:radial-gradient(ellipse at 30% 60%,#f7e9f2,#e9e0f6 70%)}.chapter-copy{position:absolute;top:28%;left:59%;width:34%;max-width:490px;z-index:8}.citrus .chapter-copy{left:var(--edge);width:40%;max-width:530px}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.17em;margin-bottom:25px;display:flex;gap:14px;align-items:center}.eyebrow:before{content:'';width:26px;height:1px;background:currentColor}h2{font-size:clamp(48px,5.3vw,88px);font-weight:600;line-height:1.09;letter-spacing:-.065em}.chapter-copy p{font-size:13px;line-height:1.95;max-width:330px;margin-top:28px;color:var(--muted)}.citrus h2{font-size:clamp(48px,4.6vw,78px)}.citrus .chapter-copy p{color:#e4d9f6}.tasting{font-size:10px;letter-spacing:.06em;margin-top:28px;display:flex;gap:10px;align-items:center}.tasting b{font-weight:400;opacity:.4}.chapter-number{position:absolute;right:var(--edge);top:12%;font-size:clamp(180px,25vw,420px);font-weight:800;line-height:1;color:#3a1f8c09;letter-spacing:-.09em;z-index:0}.citrus .chapter-number{left:var(--edge);color:#ffffff0a}.chapter-foot{position:absolute;bottom:40px;left:var(--edge);right:var(--edge);display:flex;justify-content:space-between;align-items:center;z-index:8}.chapter-foot .rule{height:1px;background:currentColor;opacity:.2;flex:1;margin:0 30px}.chapter-foot span{font-size:9px;letter-spacing:.15em;text-transform:uppercase}.flavour-button{display:flex;align-items:center;gap:12px;border:0;background:none;padding:8px 0;font-size:11px}.flavour-button .arrow{width:27px;height:27px;font-size:14px}.flavour-button:hover .arrow{transform:rotate(90deg)}
-.reveal .fade{opacity:0;transform:translateY(25px);transition:opacity 1s .25s,transform 1s .25s}.reveal.is-visible .fade{opacity:1;transform:none}.reveal .fade.later{transition-delay:.45s}.flavour-dock{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);z-index:15;display:flex;align-items:center;gap:6px;background:#f7f5ffcc;backdrop-filter:blur(16px);border:1px solid #ffffff99;border-radius:50px;padding:7px;box-shadow:0 4px 22px #2b13520b}.flavour-dock button{border:0;border-radius:30px;display:flex;align-items:center;gap:8px;padding:9px 12px;background:transparent;font-size:10px;color:#4a4568;transition:background .4s,color .4s}.flavour-dock button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 2px 8px #16082b0b}.swatch{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--swatch);box-shadow:inset 0 0 0 1px #00000009}.dock-label{position:absolute;bottom:calc(100% + 8px);left:0;right:0;text-align:center;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}.dark-active{--nav:#fff}.dark-active .dock-label{color:#e4d9f6}.badge{position:fixed;right:var(--edge);bottom:30px;z-index:15;display:flex;align-items:center;gap:10px;font-size:10px;color:var(--nav);transition:color .5s}.badge .star{width:15px;height:15px}.progress-rail{position:fixed;left:20px;top:50%;z-index:12;display:flex;flex-direction:column;gap:12px;color:var(--nav)}.progress-rail a{display:block;width:5px;height:5px;background:currentColor;border-radius:50%;opacity:.2;transition:opacity .4s,transform .4s}.progress-rail a[aria-current=true]{opacity:1;transform:scale(1.5)}.footer{background:radial-gradient(ellipse at 50% 65%,#f8f5ff,#e4e0fa 75%)}.footer-header{text-align:center;position:absolute;top:16%;left:var(--edge);right:var(--edge);z-index:8}.footer-header h2{font-size:clamp(55px,6.5vw,104px);font-weight:600}.footer-header .text-link{margin-top:25px}.footer-bottom{position:absolute;bottom:110px;left:var(--edge);right:var(--edge);display:flex;align-items:end;justify-content:space-between;z-index:8}.footer-bottom .brand{font-size:25px}.tagline{font-size:10px;color:var(--muted);margin-top:10px}.socials{display:flex;gap:24px;font-size:11px}.socials button{font:inherit;padding:5px 0;border:0;background:none;position:relative}.socials button:hover{text-decoration:underline;text-underline-offset:5px}.copyright{position:absolute;left:var(--edge);bottom:33px;font-size:8px;text-transform:uppercase;letter-spacing:.1em;opacity:.55}.toast{position:fixed;left:50%;bottom:105px;transform:translate(-50%,15px);opacity:0;padding:14px 20px;border-radius:8px;background:#241446;color:white;font-size:12px;z-index:30;max-width:90%;text-align:center;transition:opacity .3s,transform .3s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
-/* A complete product preview remains available if WebGL or the module CDN fails. */
-#fallback{position:fixed;z-index:4;top:68%;left:53%;width:145px;height:280px;border-radius:30px 30px 32px 32px;background:linear-gradient(90deg,#8675b3,#c7bcf2 20%,#e1daf8 46%,#b6a4de 79%,#7e6ca7);box-shadow:inset 2px 0 6px #fff8,inset -3px 0 10px #38285a66,20px 35px 55px #3a1f8c22;transform:translate(-50%,-50%) rotate(-9deg);display:flex;flex-direction:column;justify-content:center;text-align:center;pointer-events:none;color:#231143;transition:background 1s,opacity .5s}#fallback:before,#fallback:after{content:'';position:absolute;left:4px;right:4px;height:14px;bottom:2px;border-radius:50%;background:linear-gradient(#a7a6b1,#fafaff 40%,#777681);border:2px solid #b2b1ba}#fallback:before{bottom:auto;top:0;height:17px}#fallback strong{font-size:30px;line-height:1;letter-spacing:-2px}#fallback span{font-size:8px;letter-spacing:.09em;margin-top:18px;text-transform:uppercase}#fallback small{font-size:7px;margin-top:25px}.webgl-ready #fallback{opacity:0;visibility:hidden}.no-webgl #fallback{opacity:1;visibility:visible}.no-webgl #fallback[data-flavour="1"]{background:linear-gradient(90deg,#b59b28,#fff1a0,#eabd46)}.no-webgl #fallback[data-flavour="2"]{background:linear-gradient(90deg,#b75881,#ffd9e6,#e78bb2)}
-@media(min-width:1700px){.hero-copy{right:9%}.hero-flower{left:-10%;width:40vw}.chapter-copy{left:60%}}
-@media(max-width:1000px) and (min-width:760px){.hero-copy{right:4%;width:165px}.hero-copy p{font-size:11px}.chapter-copy{left:58%;width:37%}h2{font-size:52px}.flavour-dock button{padding:8px}.badge{font-size:9px}}
-@media(max-width:759px){:root{--edge:24px}.nav{padding:22px var(--edge)}.brand{font-size:17px;gap:7px}.brand .star{width:22px;height:22px}.nav-center{display:none}.nav-cta{font-size:9px;padding:10px 14px;gap:12px}.chapter{min-height:740px;height:100svh}.citrus h2{font-size:clamp(42px,10vw,72px)}.hero-kicker{top:15%;font-size:8px;letter-spacing:.15em}h1{font-size:clamp(43px,10.5vw,79px);top:20%;left:3%;right:3%;line-height:1.06;letter-spacing:-.045em}.hero-copy{top:38%;left:var(--edge);right:var(--edge);width:auto;text-align:center}.hero-copy p{font-size:10px;line-height:1.7;max-width:260px;margin:0 auto 12px}.text-link{font-size:10px;gap:12px}.arrow{width:27px;height:27px;font-size:14px}.hero-flower{width:70vw;height:43vh;left:-33%;bottom:0}.hero-bottom{bottom:114px;align-items:end}.hero-bottom .micro{font-size:7px}.scroll-note{font-size:7px;gap:8px}.scroll-note .scroll-line{height:22px}.badge{bottom:17px;right:var(--edge);font-size:8px;gap:6px}.badge .star{width:12px;height:12px}.flavour-dock{bottom:47px;gap:0;padding:5px;max-width:calc(100% - 30px);width:max-content}.flavour-dock button{font-size:8px;padding:9px 10px;gap:6px}.dock-label{font-size:7px;bottom:calc(100% + 6px)}.progress-rail{left:12px;gap:10px}.progress-rail a{width:3px;height:3px}.chapter-copy,.citrus .chapter-copy{top:17%;left:var(--edge);right:var(--edge);width:auto;max-width:none}.eyebrow{font-size:8px;margin-bottom:17px;gap:9px}h2{font-size:clamp(42px,11.2vw,72px);line-height:1.08}.chapter-copy p{font-size:10px;line-height:1.8;max-width:290px;margin-top:18px}.tasting{font-size:8px;margin-top:15px}.chapter-number{font-size:200px;top:11%;right:24px}.citrus .chapter-number{left:auto;right:24px}.chapter-foot{bottom:116px}.chapter-foot span{font-size:7px}.chapter-foot .rule{margin:0 15px}.flavour-button{font-size:9px}.flavour-button .arrow{width:22px;height:22px}.lavender-flower{width:60vw;height:31vh;top:-10%;left:-29%}.iris-flower{width:60vw;height:40vh;right:-30%;bottom:0}.berry-flower{width:60vw;height:40vh;left:-33%;bottom:0}.footer-header{top:17%}.footer-header h2{font-size:clamp(43px,11vw,76px)}.footer-header .text-link{margin-top:20px}.footer-bottom{bottom:120px;align-items:start}.footer-bottom .brand{font-size:16px}.footer-bottom .star{width:19px;height:19px}.tagline{font-size:8px;max-width:155px;line-height:1.6;margin-top:6px}.socials{flex-direction:column;gap:4px;font-size:9px}.socials button{padding:2px 0;text-align:right}.copyright{bottom:18px;font-size:6px;letter-spacing:.02em}.section-topline{display:none}#fallback{left:50%;top:66%;width:105px;height:205px}.toast{font-size:10px;bottom:112px;width:max-content}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition-duration:.01ms!important}h1 .line span,h2 .line span,.reveal .fade{transform:none;opacity:1}}
-
-/* Botanical campaign refinements: a quieter display face and atmospheric joins. */
-@font-face{font-family:Syne;src:url('assets/syne-latin-700-normal.woff2') format('woff2');font-weight:600 800;font-display:swap}
-h1,h2{font-family:Syne,Poppins,PoppinsBackup,sans-serif;font-weight:700;letter-spacing:-.055em}
-h1{font-size:clamp(64px,8.6vw,146px);line-height:1.04}
-.footer-header h2{font-weight:700}
-.chapter:before{content:'';position:absolute;inset:0 0 auto;height:24vh;z-index:0;pointer-events:none;background:linear-gradient(to bottom,var(--previous) 0%,transparent 100%)}
-.hero:before{display:none}.lavender{--previous:#dfd9f5}.citrus{--previous:#e4e0fa}.berry{--previous:#28125f}.footer{--previous:#e9e0f6}
-.chapter-bg{mask-image:linear-gradient(to bottom,transparent,#000 26%,#000 76%,transparent)}
-.botanical-study{position:absolute;right:-2%;top:39%;width:15vw;max-width:230px;height:210px;z-index:2;pointer-events:none;opacity:.65;transform:rotate(-23deg)}
-.botanical-study svg{width:100%;height:100%;overflow:visible}
-.drifting-petal{position:absolute;left:28%;top:59%;width:22px;height:46px;border-radius:80% 12% 80% 18%;background:linear-gradient(125deg,#d3baed,#8259b2);box-shadow:inset 2px 1px 4px #f4eaff88;transform:rotate(38deg);opacity:.6;z-index:2;pointer-events:none}
-.drifting-petal.second{left:37%;top:78%;width:12px;height:25px;transform:rotate(-28deg);opacity:.4}
-.reveal:not(.is-visible) .chapter-number{opacity:0;transform:translateY(35px)}
-.chapter-number{transition:opacity 1.4s,transform 1.4s cubic-bezier(.2,.8,.2,1)}
-h1 .line span,h2 .line span{transition-duration:1.05s;transition-delay:.12s}
-h1 .line:nth-child(2) span,h2 .line:nth-child(2) span{transition-delay:.25s}
-.reveal .fade{transition-delay:.38s}.reveal .fade.later{transition-delay:.55s}
-@media(max-width:759px){h1{font-size:clamp(42px,10.4vw,78px);letter-spacing:-.055em}.chapter:before{height:12vh}.botanical-study{width:27vw;height:135px;top:48%;right:-9%;opacity:.45}.drifting-petal{left:12%;top:51%;width:12px;height:26px}.drifting-petal.second{display:none}}
-@media(prefers-reduced-motion:reduce){.chapter-number{opacity:1!important;transform:none!important}h1 .line span,h2 .line span,.reveal .fade{transition:none}}
-
-.berry h2{font-size:clamp(48px,4vw,68px)}
-@media(max-width:759px){.berry h2{font-size:clamp(38px,9.8vw,60px)}}
-h1 .line,h2 .line{padding-bottom:.18em;margin-bottom:-.18em}
-/* One continuous lighting environment; ingredients live outside chapter clips. */
-body{overflow-x:clip;background:#e7e3fb}main{position:relative;z-index:4}
-#world{position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at 58% 36%,var(--world-glow,#f4f0ff),var(--world-base,#dfd8f2));pointer-events:none}
-.chapter{background:transparent;overflow:visible;color:var(--world-ink,#0d0b1a);transition:color .35s}
-.chapter:before,.chapter-bg{display:none}
-.chapter-copy p,.citrus .chapter-copy p{color:inherit;opacity:.78}
-.ingredient-layer{position:fixed;inset:0;z-index:3;pointer-events:none}
-.ingredient{position:absolute;left:-3%;top:36%;width:32vw;height:57vh;object-fit:contain;opacity:var(--ingredient-opacity,1);transform:translateY(var(--ingredient-y,0px)) rotate(-7deg);will-change:transform,opacity}
-.citrus-photo{left:auto;right:-2%;top:55%;width:25vw;height:28vh;opacity:var(--citrus-opacity,0);transform:translateY(var(--ingredient-y,0px)) rotate(-7deg)}
-.berry-photo{opacity:var(--berry-opacity,0);width:30vw;left:-3%;top:43%;transform:translateY(var(--ingredient-y,0px)) rotate(9deg)}
-.chapter-number{color:currentColor;opacity:.045}
-.citrus .chapter-number{color:currentColor}
-.grain{opacity:.025}
-@media(max-width:759px){.ingredient{left:-9%;top:51%;width:41vw;height:36vh}.berry-photo{top:55%;left:-10%;width:41vw;height:32vh}.chapter-number{opacity:.04}}
-@media(max-width:759px){.citrus-photo{left:auto;right:-6%;top:52%;width:34vw;height:20vh}}
-@media(prefers-reduced-motion:reduce){.ingredient{transform:none}}
-</style>
-<noscript><style>#loader{display:none}h1 .line span,h2 .line span,.reveal .fade{transform:none;opacity:1}.scroll-line:after{animation:none}</style></noscript>
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='20' fill='%23695881'/%3E%3Cpath d='M20 5Q21 18 35 20Q21 22 20 35Q18 22 5 20Q18 18 20 5' fill='%23f4efe7'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/instrument-serif-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<noscript><style>#loader{display:none!important}.reveal-line span,.reveal-item{opacity:1!important;transform:none!important}.copy{opacity:1!important;pointer-events:auto!important}.product-stage{position:absolute!important}.stage-lavender{opacity:1!important}</style></noscript>
 </head>
 <body>
-<a href="#flavours" class="skip">Skip to flavours</a>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="star" viewBox="0 0 40 40"><path d="M20 0C22 14 26 18 40 20C26 22 22 26 20 40C18 26 14 22 0 20C14 18 18 14 20 0Z"/></symbol></defs></svg>
-<div id="loader" aria-hidden="true"><svg class="star"><use href="#star"/></svg><span>A LITTLE SHIFT IN PERSPECTIVE</span></div>
-<nav class="nav" aria-label="Main navigation">
-<a class="brand" href="#home" aria-label="BLOOMSHIFT home"><svg class="star" aria-hidden="true"><use href="#star"/></svg>BLOOMSHIFT</a>
-<div class="nav-center"><a href="#flavours">Flavours</a><a href="#our-story">Our Story</a></div>
-<a class="nav-cta" href="#flavours">Explore the drop <span aria-hidden="true"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M3 3h10v10" stroke="currentColor" stroke-width="1.2"/></svg></span></a>
-</nav>
-<canvas id="product3d" aria-label="Animated three-dimensional BLOOMSHIFT soda can"></canvas>
-<div id="fallback" aria-label="BLOOMSHIFT Lavender Haze product illustration"><strong>BLOOM<br>SHIFT<span aria-hidden="true">✦</span></strong><span id="fallback-flavour">Lavender Haze</span><small>BOTANICAL SPARKLING SODA · 330 ML</small></div>
+<a class="skip" href="#flavours">Skip to flavours</a>
+<div id="loader" aria-hidden="true"><span class="spark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 1C22 15 25 18 39 20C25 22 22 25 20 39C18 25 15 22 1 20C15 18 18 15 20 1Z" fill="currentColor"/></svg></span><span>A LITTLE BOTANICAL WONDER</span></div>
+<header class="site-header"><a class="wordmark" href="#home" aria-label="Bloomshift home"><span class="brand-star" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 1C22 15 25 18 39 20C25 22 22 25 20 39C18 25 15 22 1 20C15 18 18 15 20 1Z" fill="currentColor"/></svg></span>BLOOMSHIFT</a><nav aria-label="Main navigation"><a href="#flavours">The flavours</a><a href="#our-story">Our story</a></nav><a class="header-cta" href="#flavours">Find your flavour <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12"/></svg></a></header>
 <div id="world" aria-hidden="true"></div>
-<div class="ingredient-layer" aria-hidden="true"><img class="ingredient lavender-photo" src="assets/lavender-blueberry.png" alt="" fetchpriority="high"><img class="ingredient citrus-photo" src="assets/yuzu-passionfruit.png" alt="" loading="lazy"><img class="ingredient berry-photo" src="assets/hibiscus-raspberry.png" alt="" loading="lazy"></div>
+<div class="product-stage" aria-hidden="true"><div class="stage-images"><img class="stage-lavender" src="assets/stage-lavender.png" alt="" fetchpriority="high"><img class="stage-citrus" src="assets/stage-citrus.png" alt=""><img class="stage-berry" src="assets/stage-berry.png" alt=""></div><div class="stage-shadow"></div><span class="stage-caption">THE BOTANICAL COLLECTION / 330 ML</span></div>
+<canvas id="product3d" aria-label="Interactive three-dimensional Bloomshift botanical soda can"></canvas>
+<div id="fallback" aria-label="Bloomshift soda can illustration"><span>BOTANICAL SPARKLING SODA</span><strong>bloomshift</strong><span id="fallback-flavour">Lavender Haze</span><small>0.0% ALC. · 330 ML</small></div>
 <main>
-<section id="home" class="chapter hero reveal" aria-labelledby="hero-title">
-<div class="grain" aria-hidden="true"></div>
-<div class="hero-kicker fade">Botanical fizz. Beyond ordinary.</div>
-<h1 id="hero-title"><span class="line"><span>Sip outside the</span></span><span class="line"><span>ordinary.</span></span></h1>
-<div class="hero-copy fade later"><p>Nature-inspired flavours.<br>Unexpected fizz. A whole<br>new way to refresh.</p><a class="text-link" href="#flavours">Explore the flavours <span class="arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M3 3h10v10" stroke="currentColor" stroke-width="1.2"/></svg></span></a></div>
-
-<div class="hero-bottom"><div class="micro">Real botanicals.<br>A different kind of buzz.</div><a class="scroll-note" href="#flavours"><span class="scroll-line" aria-hidden="true"></span>Scroll to shift</a></div>
-</section>
-<section id="flavours" class="chapter lavender reveal" aria-labelledby="lavender-title">
-<div class="grain" aria-hidden="true"></div><div class="chapter-number" aria-hidden="true">01</div>
-
-<div class="chapter-copy"><div class="eyebrow fade">01 / Lavender Haze</div><h2 id="lavender-title"><span class="line"><span>Nature got</span></span><span class="line"><span>a glow-up.</span></span></h2><p class="fade">Meet Lavender Haze. Juicy blueberry, delicate lavender and perfectly crisp bubbles. A little botanical magic in every sip.</p><div class="tasting fade later">Blueberry <b>×</b> Lavender <b>×</b> A little wonder</div></div>
-<div class="chapter-foot"><span>A softer state of mind</span><div class="rule"></div><button class="flavour-button" data-preview="0">Meet your mellow <span class="arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M3 3h10v10" stroke="currentColor" stroke-width="1.2"/></svg></span></button></div>
-</section>
-<section id="citrus" class="chapter citrus reveal" aria-labelledby="citrus-title">
-<div class="grain" aria-hidden="true"></div><div class="chapter-number" aria-hidden="true">02</div>
-<div class="chapter-copy"><div class="eyebrow fade">02 / Citrus Current</div><h2 id="citrus-title"><span class="line"><span>A spark of</span></span><span class="line"><span>something wild.</span></span></h2><p class="fade">Bright yuzu meets tropical passionfruit in a fizzy burst of sunshine. Bold, botanical and impossible to ignore.</p><div class="tasting fade later">Yuzu <b>×</b> Passionfruit <b>×</b> Pure possibility</div></div>
-
-<div class="chapter-foot"><span>Follow the bright side</span><div class="rule"></div><button class="flavour-button" data-preview="1">Catch the current <span class="arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M3 3h10v10" stroke="currentColor" stroke-width="1.2"/></svg></span></button></div>
-</section>
-<section id="our-story" class="chapter berry reveal" aria-labelledby="berry-title">
-<div class="grain" aria-hidden="true"></div><div class="chapter-number" aria-hidden="true">03</div>
-
-<div class="chapter-copy"><div class="eyebrow fade">03 / Berry Bloom</div><h2 id="berry-title"><span class="line"><span>Let your</span></span><span class="line"><span>flavour bloom.</span></span></h2><p class="fade">Raspberry meets fragrant hibiscus in a refreshingly unexpected blend. Bright, playful and made for moments worth sharing.</p><div class="tasting fade later">Raspberry <b>×</b> Hibiscus <b>×</b> Good company</div><p class="fade" style="font-size:10px;margin-top:18px">Our story? A belief that nature still has a few surprises up its sleeve. We’re here to put them in a can.</p></div>
-<div class="chapter-foot"><span>Made for your kind of moment</span><div class="rule"></div><button class="flavour-button" data-preview="2">Find your bloom <span class="arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M3 3h10v10" stroke="currentColor" stroke-width="1.2"/></svg></span></button></div>
-</section>
-<section id="discover" class="chapter footer reveal" aria-labelledby="footer-title">
-<div class="grain" aria-hidden="true"></div>
-<div class="footer-header"><div class="eyebrow fade" style="justify-content:center">A little curiosity looks good on you</div><h2 id="footer-title"><span class="line"><span>Find your</span></span><span class="line"><span>next favourite sip.</span></span></h2><a class="text-link fade later" href="#flavours">Discover BLOOMSHIFT <span class="arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M3 3h10v10" stroke="currentColor" stroke-width="1.2"/></svg></span></a></div>
-<div class="footer-bottom"><div><a class="brand" href="#home"><svg class="star" aria-hidden="true"><use href="#star"/></svg>BLOOMSHIFT</a><p class="tagline">Botanical fizz. Beyond ordinary.</p></div><div class="socials" aria-label="Social channels"><button data-social="Instagram">Instagram</button><button data-social="TikTok">TikTok</button><button data-social="Pinterest">Pinterest</button></div></div>
-<div class="copyright">© <span id="year">2026</span> BLOOMSHIFT · An independent concept, made with imagination.</div>
-</section>
+<section id="home" class="chapter hero" aria-labelledby="hero-title"><div class="copy hero-copy">
+<p class="eyebrow reveal-item">A little botanical wonder</p>
+<h1 id="hero-title"><span class="reveal-line"><span>Sip outside</span></span><span class="reveal-line"><span>the <em>ordinary.</em></span></span></h1>
+<p class="description reveal-item">Nature has a wild side.<br>We put a little of it in every can.</p>
+<a class="button reveal-item" href="#flavours">Meet the flavours <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12"/></svg></span></a>
+<p class="hero-note reveal-item">REAL BOTANICALS. UNEXPECTED FIZZ. 0.0% ALC.</p>
+</div><div class="chapter-bottom"><span>BOTANICAL FIZZ. BEYOND ORDINARY.</span><a href="#flavours">SCROLL TO TASTE <svg class="arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M4 11l6 6 6-6"/></svg></a></div></section>
+<section id="flavours" class="chapter lavender" aria-labelledby="lavender-title"><div class="copy copy-right">
+<p class="eyebrow reveal-item"><span class="chapter-index">01</span> Lavender Haze</p>
+<h2 id="lavender-title"><span class="reveal-line"><span>A softer</span></span><span class="reveal-line"><span><em>state of mind.</em></span></span></h2>
+<p class="description reveal-item">Juicy blueberry. Delicate lavender. A gentle fizz that turns an ordinary pause into your favourite part of the day.</p>
+<div class="tasting reveal-item"><span>Blueberry</span><i>+</i><span>Lavender</span></div>
+<button class="preview-link reveal-item" data-preview="0">Preview Lavender Haze <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12"/></svg></span></button>
+</div><div class="chapter-bottom"><span>SOFTLY FLORAL / BRIGHTLY BERRY</span><span>THE BOTANICAL COLLECTION — 01</span></div></section>
+<section id="citrus" class="chapter citrus" aria-labelledby="citrus-title"><div class="copy">
+<p class="eyebrow reveal-item"><span class="chapter-index">02</span> Citrus Current</p>
+<h2 id="citrus-title"><span class="reveal-line"><span>A bright</span></span><span class="reveal-line"><span><em>kind of energy.</em></span></span></h2>
+<p class="description reveal-item">Sharp yuzu meets sun-ripened passionfruit. An unexpected spark of citrus, made for following wherever the day takes you.</p>
+<div class="tasting reveal-item"><span>Yuzu</span><i>+</i><span>Passionfruit</span></div>
+<button class="preview-link reveal-item" data-preview="1">Preview Citrus Current <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12"/></svg></span></button>
+</div><div class="chapter-bottom"><span>A LITTLE SUNSHINE GOES A LONG WAY</span><span>THE BOTANICAL COLLECTION — 02</span></div></section>
+<section id="our-story" class="chapter berry" aria-labelledby="berry-title"><div class="copy copy-right">
+<p class="eyebrow reveal-item"><span class="chapter-index">03</span> Berry Bloom</p>
+<h2 id="berry-title"><span class="reveal-line"><span>Let your</span></span><span class="reveal-line"><span><em>flavour bloom.</em></span></span></h2>
+<p class="description reveal-item">Raspberry with a hibiscus heart. Bright, fragrant and a little unexpected. Because we believe nature still has a few surprises up its sleeve.</p>
+<div class="tasting reveal-item"><span>Raspberry</span><i>+</i><span>Hibiscus</span></div>
+<button class="preview-link reveal-item" data-preview="2">Preview Berry Bloom <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12"/></svg></span></button>
+</div><div class="chapter-bottom"><span>NATURE, WITH A TWIST. THAT’S OUR STORY.</span><span>THE BOTANICAL COLLECTION — 03</span></div></section>
+<section id="discover" class="chapter closing" aria-labelledby="closing-title"><div class="copy">
+<p class="eyebrow reveal-item">Follow your curiosity</p>
+<h2 id="closing-title"><span class="reveal-line"><span>Your next</span></span><span class="reveal-line"><span><em>little obsession.</em></span></span></h2>
+<p class="description reveal-item">Three ways to see things differently.<br>Which one feels like you?</p><a class="button reveal-item" href="#flavours">Discover your flavour <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12"/></svg></span></a>
+</div><footer class="footer"><div><a class="wordmark" href="#home">BLOOMSHIFT</a><p>Botanical fizz. Beyond ordinary.</p></div><div class="socials" aria-label="Social channels"><button data-social="Instagram">Instagram <svg class="arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12"/></svg></button><button data-social="TikTok">TikTok <svg class="arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12"/></svg></button><button data-social="Pinterest">Pinterest <svg class="arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12"/></svg></button></div><p class="copyright">© <span id="year">2026</span> BLOOMSHIFT · An independent drinks concept.</p></footer></section>
 </main>
-<div class="progress-rail" aria-label="Chapters"><a href="#home" aria-label="Hero" aria-current="true"></a><a href="#flavours" aria-label="Lavender Haze"></a><a href="#citrus" aria-label="Citrus Current"></a><a href="#our-story" aria-label="Berry Bloom"></a><a href="#discover" aria-label="Discover"></a></div>
-<div class="flavour-dock" role="group" aria-label="Preview a flavour"><span class="dock-label">One can. Three states of mind.</span><button data-preview="0" aria-pressed="true"><i class="swatch" style="--swatch:#ad90e5" aria-hidden="true"></i>Lavender</button><button data-preview="1" aria-pressed="false"><i class="swatch" style="--swatch:#f9c94d" aria-hidden="true"></i>Citrus</button><button data-preview="2" aria-pressed="false"><i class="swatch" style="--swatch:#ed82a8" aria-hidden="true"></i>Berry</button></div>
-<div class="badge"><span>Made to bloom</span><svg class="star" aria-hidden="true"><use href="#star"/></svg></div>
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
-<script>
-/* Keep the document usable even if the module or every image fails. */
-window.Bloom = {chapter:0, manual:null, reduced:matchMedia('(prefers-reduced-motion: reduce)').matches};
-const loader = document.querySelector('#loader');
-window.revealPage = () => {loader.classList.add('gone');if(!document.body.classList.contains('webgl-ready'))document.body.classList.add('no-webgl')};
-setTimeout(window.revealPage, 2500);
-document.querySelector('#year').textContent = new Date().getFullYear();
-const chapters = [...document.querySelectorAll('.chapter')];
-const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
-motionPreference.addEventListener('change', e => {window.Bloom.reduced=e.matches;lastScroll=-1});
-// Reveal the copy when it reaches the reading area, rather than when a
-// chapter's empty leading space first enters the viewport. Replay after exit.
-const observer = new IntersectionObserver(entries => entries.forEach(e => {
-  const chapter=e.target.closest('.chapter');
-  if(e.isIntersecting)chapter.classList.add('is-visible');
-  else if(e.boundingClientRect.top>innerHeight||e.boundingClientRect.bottom<0)chapter.classList.remove('is-visible');
-}),{threshold:.12,rootMargin:'0px 0px -12% 0px'});
-chapters.forEach(c=>observer.observe(c.querySelector('.chapter-copy,.footer-header,h1')));
-document.querySelectorAll('.ingredient').forEach(img=>img.addEventListener('error',()=>{img.hidden=true}));
-const previewNames=['Lavender Haze','Citrus Current','Berry Bloom'];
-window.updateFlavourUI = value => {
-  document.querySelectorAll('.flavour-dock button').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.preview)===value));
-  const fallback=document.querySelector('#fallback');fallback.dataset.flavour=value;
-  fallback.setAttribute('aria-label',`BLOOMSHIFT ${previewNames[value]} product illustration`);
-  document.querySelector('#fallback-flavour').textContent=previewNames[value];
-};
-document.querySelectorAll('[data-preview]').forEach(b=>b.addEventListener('click',()=>{window.Bloom.manual={flavour:Number(b.dataset.preview),chapter:window.Bloom.chapter,at:performance.now()};window.updateFlavourUI(Number(b.dataset.preview))}));
-let toastTimer;
-document.querySelectorAll('[data-social]').forEach(b=>b.addEventListener('click',()=>{const t=document.querySelector('#toast');t.textContent=`${b.dataset.social}: our next chapter is still growing. Stay curious.`;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3500)}));
-let lastChapter=-1, offsets=[],lastScroll=-1;
-const flowers=[...document.querySelectorAll('.flower')];
-function measureChapters(){offsets=chapters.map(c=>c.offsetTop);window.Bloom.offsets=offsets;lastScroll=-1}
-measureChapters();addEventListener('resize',measureChapters,{passive:true});
-const scenePalettes=[[[244,240,255],[223,216,242]],[[247,244,255],[228,224,250]],[[83,46,146],[40,18,95]],[[250,232,242],[233,224,246]],[[248,245,255],[228,224,250]]];
-const photoLevels=[1,.62,0,.85,.25];
-function blendRGB(a,b,t){return `rgb(${a.map((v,i)=>Math.round(v+(b[i]-v)*t)).join(',')})`}
-function updateAtmosphere(y,vh){
- let i=0;for(let j=1;j<offsets.length;j++)if(y>=offsets[j]-vh*.45)i=j;
- const t=i===0?1:Math.max(0,Math.min(1,(y-(offsets[i]-vh*.45))/(vh*.5)));
- const e=t*t*(3-2*t),a=scenePalettes[Math.max(0,i-1)],b=scenePalettes[i];
- const dark=(i===2&&e>.64)||(i===3&&e<.36);
- document.body.style.setProperty('--world-glow',blendRGB(a[0],b[0],e));
- document.body.style.setProperty('--world-base',blendRGB(a[1],b[1],e));
- document.body.style.setProperty('--world-ink',dark?'#f4efff':'#0d0b1a');
- document.body.style.setProperty('--nav',dark?'#fff':'#0d0b1a');
- const prev=Math.max(0,i-1);
- const lavender=(prev<2||prev===4?photoLevels[prev]:0)*(1-e)+(i<2||i===4?photoLevels[i]:0)*e;
- const berry=(prev===3?photoLevels[prev]:0)*(1-e)+(i===3?photoLevels[i]:0)*e;
- document.body.style.setProperty('--ingredient-opacity',i===2?photoLevels[prev]*Math.max(0,1-e*2.2):lavender);
- document.body.style.setProperty('--berry-opacity',berry);
- document.body.style.setProperty('--citrus-opacity',(prev===2?1:0)*(1-e)+(i===2?1:0)*e);
- document.body.style.setProperty('--ingredient-y',`${Bloom.reduced?0:Math.sin(y/(vh*1.7))*24}px`);
- return dark;
-}
-function updatePage(){
-  const y=scrollY, vh=innerHeight;
-  let nearest=0;for(let i=1;i<offsets.length;i++)if(y+vh*.48>=offsets[i])nearest=i;
-  if(nearest!==lastChapter){
-    window.Bloom.chapter=nearest;
-    if(window.Bloom.manual&&window.Bloom.manual.chapter!==nearest)window.Bloom.manual=null;
-    document.querySelectorAll('.progress-rail a').forEach((a,i)=>a.setAttribute('aria-current',i===nearest));
-    if(!window.Bloom.manual)window.updateFlavourUI([0,0,1,2,0][nearest]);
-    lastChapter=nearest;
-  }
-  if(lastScroll!==y){
-    const atmosphereDark=updateAtmosphere(y,vh);document.body.classList.toggle('dark-active',atmosphereDark);
-    const bottomDark=atmosphereDark;
-    document.querySelector('.badge').style.color=bottomDark?'#fff':'#0d0b1a';
-    document.querySelector('.dock-label').style.color=bottomDark?'#e4d9f6':'#4a4568';
-    flowers.forEach((f,i)=>{const delta=y-offsets[i];const d=window.Bloom.reduced?0:delta*Number(f.dataset.parallax);f.style.translate=`0 ${Math.max(-90,Math.min(90,d))}px`;f.style.rotate=`${window.Bloom.reduced?0:Math.max(-8,Math.min(8,delta*.006))}deg`});
-    lastScroll=y;
-  }
-  requestAnimationFrame(updatePage);
-}
-requestAnimationFrame(updatePage);
-</script>
-<script type="module">
-import * as THREE from 'three';
-
-const state=window.Bloom;
-const TAU=Math.PI*2,rad=Math.PI/180;
-let renderer,scene,camera,flightGroup,productRoot,orbit,labels=[],particleMesh,condensation;
-const canvas=document.querySelector('#product3d');
-const mobile=()=>innerWidth<760;
-const clamp=THREE.MathUtils.clamp,lerp=THREE.MathUtils.lerp;
-const ease=x=>x*x*(3-2*x);
-let seed=42019;const random=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296};
-let frame=0,renderCount=0,elapsed=0,lastTime=0,raf=0,paused=false;
-let width=innerWidth,height=innerHeight,viewH=0,viewW=0;
-let pointerX=0,pointerY=0,mouseX=0,mouseY=0;
-let currentX=0,currentY=0,currentYaw=0,currentPitch=0,currentRoll=0,currentScale=1,progress=0,currentFlavour=0;
-let velocities=0,previousX=0,burst=0;
-const palettes=[new THREE.Color('#b599ee'),new THREE.Color('#f9c94d'),new THREE.Color('#ed82a8')];
-const colour=new THREE.Color(),helper=new THREE.Object3D();
-let runningDrops,dropPhases=[];
-let particles=[],botanicals=[],ribbons=[],sparkleMesh,particleCount=0;
-let ribbonShader;
-let physicalMaterial,petalMaterials=[],citrusMaterial,ribbonMaterial,aluminium,keyLight,rimLight;
-let weights=[1,0,0],targetWeights=[1,0,0];
-const desktopKeys=[
- {x:.10,y:-.18,s:1,ya:-12,pi:.10,ro:-9,f:0,ex:.12,int:.18},
- {x:-.23,y:-.03,s:1,ya:24,pi:.08,ro:10,f:0,ex:.4,int:.35},
- {x:.25,y:-.07,s:1.06,ya:-20,pi:.16,ro:-13,f:1,ex:.85,int:1},
- {x:-.21,y:-.02,s:.98,ya:19,pi:.06,ro:8,f:2,ex:.55,int:.55},
- {x:0,y:-.15,s:.88,ya:0,pi:.10,ro:-3,f:0,ex:.28,int:.25}
-];
-const mobileKeys=[
- {x:0,y:-.155,s:.67,ya:-12,pi:.1,ro:-8,f:0,ex:.08,int:.15},
- {x:.035,y:-.175,s:.66,ya:20,pi:.1,ro:10,f:0,ex:.18,int:.25},
- {x:.02,y:-.17,s:.68,ya:-20,pi:.13,ro:-12,f:1,ex:.35,int:.7},
- {x:.015,y:-.2,s:.64,ya:15,pi:.06,ro:8,f:2,ex:.22,int:.45},
- {x:0,y:-.105,s:.57,ya:0,pi:.10,ro:-3,f:0,ex:.12,int:.15}
-];
-function buildLabel(index){
-  const names=['LAVENDER HAZE','CITRUS CURRENT','BERRY BLOOM'];
-  const notes=['BLUEBERRY + LAVENDER','YUZU + PASSIONFRUIT','RASPBERRY + HIBISCUS'];
-  const base=[['#9a7bce','#c3a7e5','#7950ba'],['#dfad28','#f4d86b','#b8b640'],['#ce6496','#eea7c5','#ad427e']][index];
-  const c=document.createElement('canvas');c.width=mobile()?2048:4096;c.height=c.width;const ctx=c.getContext('2d');ctx.scale(c.width/2048,c.height/2048);
-  const g=ctx.createLinearGradient(0,0,2048,2048);g.addColorStop(0,base[0]);g.addColorStop(.5,base[1]);g.addColorStop(1,base[2]);ctx.fillStyle=g;ctx.fillRect(0,0,2048,2048);
-  // Wraparound, fluid botanical bands extend across the whole cylinder.
-  for(let j=0;j<7;j++){
-    ctx.beginPath();ctx.moveTo(-100,1280+j*125);ctx.bezierCurveTo(450,700+j*130,1280,2400-j*80,2170,950+j*110);ctx.lineTo(2170,2200);ctx.lineTo(-100,2200);ctx.fillStyle=j%2?`${base[2]}16`:`${base[0]}25`;ctx.fill();
-  }
-  ctx.fillStyle='#231438';ctx.textAlign='center';
-  ctx.font='500 29px Poppins, PoppinsBackup, sans-serif';ctx.fillText('N A T U R E ,  W I T H  A  T W I S T .',1024,230);
-  // The front occupies the middle third; remaining print wraps around the back.
-  ctx.font='800 170px Poppins, PoppinsBackup, sans-serif';ctx.fillText('BLOOM',1024,690);ctx.fillText('SHIFT',1024,860);
-  ctx.save();ctx.translate(1024,1105);ctx.strokeStyle='#38234c';ctx.lineWidth=3;
-  for(let k=0;k<8;k++){ctx.rotate(TAU/8);ctx.beginPath();ctx.ellipse(0,-53,17,46,0,0,TAU);ctx.stroke()}
-  ctx.beginPath();ctx.arc(0,0,11,0,TAU);ctx.fill();ctx.restore();
-  ctx.font='600 55px Poppins, PoppinsBackup, sans-serif';ctx.fillText(names[index],1024,1350);
-  ctx.font='400 31px Poppins, PoppinsBackup, sans-serif';ctx.fillText(notes[index],1024,1415);
-  ctx.beginPath();ctx.moveTo(813,1500);ctx.lineTo(1235,1500);ctx.strokeStyle='#23143855';ctx.lineWidth=2;ctx.stroke();
-  ctx.font='400 23px Poppins, PoppinsBackup, sans-serif';ctx.fillText('BOTANICAL SPARKLING SODA',1024,1570);
-  ctx.font='500 31px Poppins, PoppinsBackup, sans-serif';ctx.fillText('0.0% ALC.    ✦    330 ML',1024,1770);
-  ctx.textAlign='left';ctx.save();ctx.translate(200,1350);ctx.rotate(-Math.PI/2);ctx.font='400 22px Poppins, PoppinsBackup, sans-serif';ctx.fillText('A LITTLE CURIOSITY IN EVERY CAN.  /  BLOOMSHIFT',0,0);ctx.restore();
-
-  const texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=Math.min(renderer.capabilities.getMaxAnisotropy(),16);return texture;
-}
-function addMesh(geometry,material,parent=productRoot){const mesh=new THREE.Mesh(geometry,material);parent.add(mesh);return mesh}
-function makeCan(){
-  aluminium=new THREE.MeshStandardMaterial({color:'#cdd0d8',metalness:1,roughness:.22,envMapIntensity:1.3});
-  const darkMetal=new THREE.MeshStandardMaterial({color:'#767786',metalness:1,roughness:.3});
-  const profile=[new THREE.Vector2(0,-1.22),new THREE.Vector2(.45,-1.22),new THREE.Vector2(.49,-1.19),new THREE.Vector2(.51,-1.12),new THREE.Vector2(.565,-1.06),new THREE.Vector2(.575,-.99),new THREE.Vector2(.575,.94),new THREE.Vector2(.573,.975),new THREE.Vector2(.566,1.005),new THREE.Vector2(.55,1.04),new THREE.Vector2(.532,1.075),new THREE.Vector2(.52,1.11),new THREE.Vector2(.49,1.15),new THREE.Vector2(.49,1.20),new THREE.Vector2(0,1.20)];
-  const body=addMesh(new THREE.LatheGeometry(profile,128),aluminium);body.name='canBody';
-  const labelGeo=new THREE.CylinderGeometry(.577,.577,1.99,128,1,true);
-  for(let i=0;i<3;i++){
-    const material=new THREE.MeshStandardMaterial({map:buildLabel(i),metalness:.12,roughness:.43,transparent:i!==0,opacity:i===0?1:0,depthWrite:i===0,polygonOffset:true,polygonOffsetFactor:-1-i,polygonOffsetUnits:-1-i});
-    const mesh=addMesh(labelGeo,material);mesh.rotation.y=Math.PI;mesh.position.y=-.015;mesh.renderOrder=2+i;mesh.name=`label-${i}`;labels.push(mesh);
-  }
-  for(const y of [-1.19,1.20]){const rim=addMesh(new THREE.TorusGeometry(.496,.027,12,96),aluminium);rim.rotation.x=Math.PI/2;rim.position.y=y;rim.name='aluminiumRim'}
-  const lid=addMesh(new THREE.CylinderGeometry(.49,.49,.019,96),aluminium);lid.position.y=1.19;lid.name='lid';
-  for(const radius of [.368,.448]){const stamp=addMesh(new THREE.TorusGeometry(radius,.0035,6,80),darkMetal);stamp.rotation.x=Math.PI/2;stamp.position.y=1.202}
-  const inner=addMesh(new THREE.TorusGeometry(.419,.008,8,80),darkMetal);inner.rotation.x=Math.PI/2;inner.position.y=1.204;
-  const opening=addMesh(new THREE.SphereGeometry(1,24,12),new THREE.MeshStandardMaterial({color:'#27232e',metalness:.65,roughness:.35}));opening.scale.set(.125,.004,.18);opening.position.set(0,1.205,.19);
-  const tabShape=new THREE.Shape();tabShape.absellipse(0,0,.11,.185,0,TAU,false,0);const hole=new THREE.Path();hole.absellipse(0,-.035,.058,.092,0,TAU,true,0);tabShape.holes.push(hole);
-  const tab=addMesh(new THREE.ExtrudeGeometry(tabShape,{depth:.018,bevelEnabled:true,bevelSegments:3,steps:1,bevelSize:.009,bevelThickness:.006}),aluminium);tab.rotation.x=-Math.PI/2;tab.position.set(0,1.213,-.035);tab.name='ringPull';
-  const rivet=addMesh(new THREE.SphereGeometry(.027,16,8),aluminium);rivet.position.set(0,1.237,-.14);rivet.scale.y=.3;
-  const dropGeo=new THREE.SphereGeometry(1,mobile()?10:16,mobile()?8:12);
-  const dropMat=new THREE.MeshPhysicalMaterial({color:'#dfe6ee',metalness:.05,roughness:.06,clearcoat:1,transmission:0,thickness:.04,transparent:true,opacity:.46,envMapIntensity:1.25});
-  condensation=new THREE.InstancedMesh(dropGeo,dropMat,mobile()?80:155);condensation.name='condensationDroplets';
-  for(let i=0;i<condensation.count;i++){const a=random()*TAU,y=(random()-.5)*1.94,size=.004+random()*.009;helper.position.set(Math.sin(a)*.584,y,Math.cos(a)*.584);helper.scale.set(size,size*(1.05+random()*.6),size*.65);helper.rotation.set(0,a,0);helper.updateMatrix();condensation.setMatrixAt(i,helper.matrix)}
-  productRoot.add(condensation);
-  runningDrops=new THREE.InstancedMesh(dropGeo,dropMat,7);runningDrops.name='slidingCondensation';
-  for(let i=0;i<7;i++)dropPhases.push({angle:(random()-.5)*2.3,phase:random()*1.8,speed:.025+random()*.02,size:.008+random()*.005});
-  productRoot.add(runningDrops);
-}
-function makeOrbit(){
-  orbit=new THREE.Group();orbit.name='liquidOrbit';flightGroup.add(orbit);
-  const dropletGeo=new THREE.SphereGeometry(1,12,8);
-  physicalMaterial=new THREE.MeshPhysicalMaterial({color:palettes[0],metalness:.12,roughness:.12,clearcoat:1,clearcoatRoughness:.05,transparent:true,opacity:.5,envMapIntensity:1.1});
-  particleCount=mobile()?28:52;particleMesh=new THREE.InstancedMesh(dropletGeo,physicalMaterial,particleCount);particleMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);orbit.add(particleMesh);particleMesh.name='orbitDroplets';
-  for(let i=0;i<particleCount;i++)particles.push({angle:random()*TAU,radius:.85+random()*.6,y:(random()-.5)*2.7,size:.009+random()*.027,speed:.17+random()*.3,phase:random()*TAU});
-  const sparkMat=new THREE.MeshStandardMaterial({color:'#fff6dd',emissive:'#fff3dc',emissiveIntensity:.3,roughness:.2,metalness:.2});
-  sparkleMesh=new THREE.InstancedMesh(new THREE.OctahedronGeometry(.013),sparkMat,mobile()?18:40);sparkleMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);sparkleMesh.visible=false;orbit.add(sparkleMesh);sparkleMesh.name='sparkleParticles';
-  ribbonMaterial=new THREE.MeshPhysicalMaterial({color:palettes[0],metalness:.2,roughness:.075,clearcoat:1,transparent:true,opacity:.48,transmission:0,thickness:.2,side:THREE.DoubleSide,depthWrite:false,envMapIntensity:1.7});
-  ribbonMaterial.onBeforeCompile=shader=>{
-    shader.uniforms.uFlowTime={value:0};shader.uniforms.uMotion={value:1};
-    shader.vertexShader='uniform float uFlowTime; uniform float uMotion;\n'+shader.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\ntransformed.x += sin(position.y * 4.0 + uFlowTime * .8) * .055 * uMotion; transformed.z += cos(position.y * 3.1 + uFlowTime) * .055 * uMotion;');
-    ribbonShader=shader;
-  };
-  for(let r=0;r<(mobile()?1:2);r++){
-    const points=[];for(let j=0;j<=100;j++){const t=j/100,a=t*TAU*1.05+r*Math.PI;points.push(new THREE.Vector3(Math.sin(a)*1.10,(t-.5)*2.2,Math.cos(a)*1.10))}
-    const geo=new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points),140,r===0?.026:.013,8,false);
-    // Taper the ends once; animation transforms this reusable geometry.
-    const pos=geo.attributes.position,normal=geo.attributes.normal;
-    for(let i=0;i<pos.count;i++){const u=Math.floor(i/9)/140,taper=Math.pow(Math.sin(u*Math.PI),.65),shrink=(1-taper)*(r===0?.026:.013);pos.setXYZ(i,pos.getX(i)-normal.getX(i)*shrink,pos.getY(i)-normal.getY(i)*shrink,pos.getZ(i)-normal.getZ(i)*shrink)}
-    geo.computeVertexNormals();const mesh=new THREE.Mesh(geo,ribbonMaterial);mesh.name='liquidRibbon';mesh.rotation.z=.22+r*.3;orbit.add(mesh);ribbons.push(mesh);
-  }
-
-}
-function resize(){
- width=innerWidth;height=innerHeight;camera.aspect=width/height;camera.updateProjectionMatrix();renderer.setSize(width,height);renderer.setPixelRatio(Math.min(devicePixelRatio,mobile()?1.5:1.75));viewH=2*Math.tan(15*rad)*camera.position.z;viewW=viewH*camera.aspect;
-}
-function fallback(error){
- console.warn('BLOOMSHIFT product preview fallback:',error?.message||error);document.body.classList.remove('webgl-ready');document.body.classList.add('no-webgl');window.revealPage();cancelAnimationFrame(raf);renderer?.dispose();
-}
-function animate(now){
- if(paused)return;
- const dt=Math.min((now-lastTime)/1000||.016,.05);lastTime=now;elapsed+=dt;frame++;
- const reduced=state.reduced,flow=reduced?.035:1,k=1-Math.exp(-dt*(reduced?7:3.2));
- const offsets=state.offsets;
- let idx=0;for(let i=1;i<5;i++)if(scrollY>=offsets[i])idx=i;
- const raw=idx===4?0:clamp((scrollY-offsets[idx])/(offsets[idx+1]-offsets[idx]),0,1);
- const t=ease(raw),travel=Math.sin(raw*Math.PI),keys=mobile()?mobileKeys:desktopKeys,a=keys[idx],b=keys[Math.min(idx+1,4)];
- progress=idx+raw;
- const tx=lerp(a.x,b.x,t)*viewW,ty=lerp(a.y,b.y,t)*viewH-travel*.16*flow;
- previousX=currentX;currentX=lerp(currentX,tx,k);currentY=lerp(currentY,ty,k);
- velocities=lerp(velocities,(currentX-previousX)/Math.max(dt,.001),1-Math.exp(-dt*4));
- mouseX=lerp(mouseX,pointerX,1-Math.exp(-dt*4));mouseY=lerp(mouseY,pointerY,1-Math.exp(-dt*4));
- let spin=0;
- // A full, continuous turn returns to a readable face. It reverses cleanly on upward scroll.
- if(idx===1||idx===2)spin=TAU*ease(raw);
- if(idx>=2)spin+=TAU;if(idx>=3)spin+=TAU;
- currentYaw=lerp(currentYaw,lerp(a.ya,b.ya,t)*rad+spin*flow,k);
- currentPitch=lerp(currentPitch,lerp(a.pi,b.pi,t)+velocities*.025*flow,k);
- currentRoll=lerp(currentRoll,lerp(a.ro,b.ro,t)*rad-velocities*.075*flow,k);
- currentScale=lerp(currentScale,lerp(a.s,b.s,t),k);
- flightGroup.position.set(currentX,currentY+Math.sin(elapsed*1.12)*.035*flow,0);
- const responsiveScale=mobile()?viewH/6.4:Math.min(viewH/6.2,viewW/6,1.25);
- flightGroup.scale.setScalar(currentScale*responsiveScale);
- const manual=state.manual;
- const celebration=manual?Math.sin(clamp((now-manual.at)/1100,0,1)*Math.PI)*.16*flow:0;
- productRoot.rotation.set(currentPitch+mouseY*.09*flow,currentYaw+Math.sin(elapsed*.43)*.045*flow+mouseX*.15*flow,currentRoll+Math.sin(elapsed*.7)*.017*flow+celebration);
- targetWeights.fill(0);
- if(manual){targetWeights[manual.flavour]=1}
- else{targetWeights[a.f]+=1-t;targetWeights[b.f]+=t}
- const fadeK=1-Math.exp(-dt*4);
- for(let i=0;i<3;i++){weights[i]=lerp(weights[i],targetWeights[i],fadeK)}
- // Opaque base + two composited layers produces exact weighted crossfades without depth flicker.
- labels[0].material.opacity=1;
- labels[1].material.opacity=weights[1]/Math.max(.0001,weights[0]+weights[1]);
- labels[2].material.opacity=weights[2];
- colour.setRGB(0,0,0);for(let i=0;i<3;i++){colour.r+=palettes[i].r*weights[i];colour.g+=palettes[i].g*weights[i];colour.b+=palettes[i].b*weights[i]}
- physicalMaterial.color.copy(colour);ribbonMaterial.color.copy(colour);
- const expansion=lerp(a.ex,b.ex,t)+travel*.35, intensity=lerp(a.int,b.int,t)+travel;
- orbit.position.x=lerp(orbit.position.x,-clamp(velocities,-3,3)*.075*flow,k);orbit.position.y=lerp(orbit.position.y,travel*.14*flow,k);
- orbit.rotation.y=Math.sin(elapsed*.16)*.12*flow;orbit.rotation.z=lerp(a.ro,b.ro,t)*rad*.4;
- for(let i=0;i<particleCount;i++){
-   const p=particles[i],ang=p.angle+elapsed*p.speed*flow,ring=p.radius+expansion*(.25+.24*Math.sin(p.phase));
-   const bloom=idx===2?travel*.28:0;
-   helper.position.set(Math.cos(ang)*(ring+bloom),p.y+Math.sin(elapsed*.85*flow+p.phase)*(.1+intensity*.1),Math.sin(ang)*ring);
-   const size=p.size*(1+.12*Math.sin(elapsed*2*flow+p.phase));helper.scale.set(size,size*(1.15+intensity*.6),size);helper.rotation.set(0,0,ang);helper.updateMatrix();particleMesh.setMatrixAt(i,helper.matrix);
-   if(idx===4&&raw===0){particleMesh.setColorAt(i,palettes[i%3])}else{particleMesh.setColorAt(i,colour)}
- }
- particleMesh.instanceMatrix.needsUpdate=true;if(particleMesh.instanceColor)particleMesh.instanceColor.needsUpdate=true;
- // Instance colour multiplies material; keep footer's three colours luminous and let them gather.
- if(idx===4){physicalMaterial.color.set('#ffffff');const gather=clamp((elapsed-(state.footerEntered??elapsed))/4,0,1);for(let i=0;i<particleCount;i++){colour.copy(palettes[i%3]).lerp(palettes[0],gather);particleMesh.setColorAt(i,colour)}}
- if(idx===4&&state.footerEntered===undefined)state.footerEntered=elapsed;if(idx!==4)state.footerEntered=undefined;
- for(let i=0;i<sparkleMesh.count;i++){const p=particles[i],ang=p.angle+elapsed*.1*flow;helper.position.set(Math.sin(ang)*(p.radius+.6),((p.y+elapsed*.12*flow+2)%4)-2,Math.cos(ang)*(p.radius+.6));helper.scale.setScalar(.5+Math.sin(elapsed*1.5*flow+p.phase)**8);helper.rotation.set(ang,ang,0);helper.updateMatrix();sparkleMesh.setMatrixAt(i,helper.matrix)}sparkleMesh.instanceMatrix.needsUpdate=true;
- ribbons.forEach((r,i)=>{r.rotation.y=elapsed*(i?-.10:.12)*flow;r.rotation.x=Math.sin(elapsed*.4)*.12*flow;r.scale.set(1+expansion*.32,1+Math.sin(elapsed*.7)*.05*flow,1+expansion*.32)});
- if(ribbonShader){ribbonShader.uniforms.uFlowTime.value=elapsed*flow;ribbonShader.uniforms.uMotion.value=flow}
- ribbonMaterial.opacity=reduced?.18:.27+travel*.25+intensity*.06;
-
- keyLight.position.x=3+Math.sin(elapsed*.3)*.5*flow;rimLight.intensity=idx===2?6:3.3;
- if(runningDrops){
-   for(let i=0;i<dropPhases.length;i++){
-     const d=dropPhases[i],y=.88-((d.phase+elapsed*d.speed*flow)%1.8);
-     helper.position.set(Math.sin(d.angle)*.586,y,Math.cos(d.angle)*.586);
-     helper.rotation.set(0,d.angle,0);helper.scale.set(d.size,d.size*2.6,d.size*.48);helper.updateMatrix();runningDrops.setMatrixAt(i,helper.matrix);
-   }
-   runningDrops.instanceMatrix.needsUpdate=true;
- }
- renderer.render(scene,camera);renderCount++;
- if(renderCount===1){document.body.classList.remove('no-webgl');document.body.classList.add('webgl-ready');window.revealPage()}
- // Small read-only diagnostics make real geometry, motion and allocation checks reproducible.
- if(frame%12===0)canvas.dataset.frame=String(frame);
- raf=requestAnimationFrame(animate);
-}
-async function init(){
- try{
-   renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'high-performance'});renderer.setClearColor(0x000000,0);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
-   scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(30,innerWidth/innerHeight,.1,50);camera.position.set(0,0,11);
-   const studio=new THREE.Scene();studio.background=new THREE.Color('#777180');
-   const panels=[[5,1.2,-3,2,4],[-4,1,2,1.8,5],[0,5,0,4,3]];
-   for(const [x,y,z,w,h] of panels){const panel=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({color:'#fff8f0',side:THREE.DoubleSide}));panel.position.set(x,y,z);panel.lookAt(0,0,0);studio.add(panel)}
-   const pmrem=new THREE.PMREMGenerator(renderer);scene.environment=pmrem.fromScene(studio,.025).texture;studio.traverse(o=>{o.geometry?.dispose();o.material?.dispose()});pmrem.dispose();
-   scene.add(new THREE.HemisphereLight('#f8f3ff','#554073',1.5));
-   keyLight=new THREE.DirectionalLight('#fff3df',2.5);keyLight.position.set(3,5,5);scene.add(keyLight);
-   rimLight=new THREE.DirectionalLight('#ad94ff',3.3);rimLight.position.set(-3,2,-3);scene.add(rimLight);
-   const strip=new THREE.DirectionalLight('#ffffff',2);strip.position.set(-4,1,5);scene.add(strip);
-   flightGroup=new THREE.Group();flightGroup.name='flightGroup';scene.add(flightGroup);productRoot=new THREE.Group();productRoot.name='productRoot';flightGroup.add(productRoot);
-   // Fonts cannot hold the product hostage. Refresh the procedural labels when fonts arrive.
-   makeCan();makeOrbit();resize();
-   currentX=desktopKeys[0].x*viewW;currentY=desktopKeys[0].y*viewH;
-   const refreshLabels=()=>labels.forEach((mesh,i)=>{const old=mesh.material.map;mesh.material.map=buildLabel(i);old.dispose();mesh.material.needsUpdate=true});
-   document.fonts.ready.then(refreshLabels);
-   addEventListener('pointermove',e=>{pointerX=(e.clientX/width-.5)*2;pointerY=(e.clientY/height-.5)*2},{passive:true});
-   addEventListener('pointerleave',()=>{pointerX=pointerY=0});
-   addEventListener('resize',resize,{passive:true});
-   document.addEventListener('visibilitychange',()=>{if(!document.body.classList.contains('webgl-ready'))return;paused=document.hidden;if(paused)cancelAnimationFrame(raf);else{lastTime=performance.now();raf=requestAnimationFrame(animate)}});
-   canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();fallback(new Error('WebGL context lost'))});
-   window.__bloom={snapshot:()=>({frame,renderCount,position:flightGroup.position.toArray(),rotation:productRoot.rotation.toArray().slice(0,3),scale:flightGroup.scale.x,weights:[...weights],colour:physicalMaterial.color.getHexString(),particleMatrix:Array.from(particleMesh.instanceMatrix.array.slice(0,16)),geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,particles:particleCount,three:THREE.REVISION,chapter:state.chapter,reduced:state.reduced}),scene,camera};
-   lastTime=performance.now();raf=requestAnimationFrame(animate);
- }catch(error){fallback(error)}
-}
-init();
-</script>
-</body>
-</html>
+<div class="flavour-dock" role="group" aria-label="Preview a flavour"><span class="dock-note">A CHANGE OF TASTE</span><button data-preview="0" aria-pressed="true"><i style="--swatch:#9685b8"></i>Lavender</button><button data-preview="1" aria-pressed="false"><i style="--swatch:#e5b355"></i>Citrus</button><button data-preview="2" aria-pressed="false"><i style="--swatch:#d77c92"></i>Berry</button></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script><script type="module" src="scene.js"></script>
+</body></html>
